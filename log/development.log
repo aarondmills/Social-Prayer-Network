@@ -1180,3 +1180,67 @@ Migrating to CreatePrayers (20101215025655)
   [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("users")[0m
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-12-14 22:38:50 -0500
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/devise-1.1.5/app/views/devise/shared/_links.erb (2.1ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/devise-1.1.5/app/views/devise/registrations/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 42ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-14 22:38:54 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (0.5ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 110ms (Views: 26.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-14 22:38:56 -0500
+  Processing by PrayersController#new as HTML
+Rendered prayers/_form.html.erb (10.0ms)
+Rendered prayers/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 50ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-12-14 22:50:03 -0500
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/devise-1.1.5/app/views/devise/shared/_links.erb (2.4ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/devise-1.1.5/app/views/devise/sessions/new.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 54ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-12-14 22:50:05 -0500
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/devise-1.1.5/app/views/devise/shared/_links.erb (1.9ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/devise-1.1.5/app/views/devise/registrations/new.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 104ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-12-14 22:50:07 -0500
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/devise-1.1.5/app/views/devise/shared/_links.erb (2.1ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/devise-1.1.5/app/views/devise/sessions/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 97ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-14 22:52:20 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (0.5ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (68.2ms)
+Completed 200 OK in 85ms (Views: 73.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2010-12-14 22:52:31 -0500
+  Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered categories/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 36ms (Views: 24.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2010-12-14 22:52:34 -0500
+  Processing by CategoriesController#new as HTML
+Rendered categories/_form.html.erb (8.2ms)
+Rendered categories/new.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 51ms (Views: 37.6ms | ActiveRecord: 0.0ms)
