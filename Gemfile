@@ -3,6 +3,13 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.3'
 gem 'devise'
 gem 'flutie', '1.0.3'
+gem 'capybara'
+gem 'database_cleaner'
+gem 'cucumber-rails'
+gem 'cucumber'
+gem 'rspec-rails'
+gem 'spork'
+gem 'launchy' 
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>Title</th>
     <th>Request</th>
     <th></th>
     <th></th>
@@ -11,7 +10,6 @@
 
 <% @prayers.each do |prayer| %>
   <tr>
-    <td><%= prayer.title %></td>
     <td><%= prayer.request %></td>
     <td><%= link_to 'Show', prayer %></td>
     <td><%= link_to 'Edit', edit_prayer_path(prayer) %></td>

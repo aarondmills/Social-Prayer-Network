@@ -1,8 +1,10 @@
 Spn::Application.routes.draw do
-  devise_for :users
-  
   resources :prayers
-  root :to => "prayers#index"
+
+  resources :categories
+
+  devise_for :users
+    root :to => "prayers#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

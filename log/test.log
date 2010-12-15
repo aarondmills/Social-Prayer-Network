@@ -1,0 +1,75 @@
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-14 14:30:43 -0500
+  Processing by PrayersController#new as HTML
+Completed   in 1ms
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-14 14:32:15 -0500
+  Processing by PrayersController#new as HTML
+Completed   in 2ms
+  [1m[36mSQL (1.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (3.6ms)[0m  [1mCREATE TABLE "prayers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "request" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35mSQL (1.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (2.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101214043657')[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101214043554')
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-14 14:36:01 -0500
+  Processing by PrayersController#new as HTML
+Rendered prayers/_form.html.erb (12.8ms)
+Rendered prayers/new.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 53ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/prayers" for 127.0.0.1 at 2010-12-14 14:36:01 -0500
+  Processing by PrayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "prayer"=>{"title"=>"This is my prayer title", "request"=>"This is my request"}, "commit"=>"Create Prayer"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.8ms)[0m  INSERT INTO "prayers" ("title", "request", "created_at", "updated_at") VALUES ('This is my prayer title', 'This is my request', '2010-12-14 19:36:01.400100', '2010-12-14 19:36:01.400100')
+Redirected to http://www.example.com/prayers/1
+Completed 302 Found in 101ms
+
+
+Started GET "/prayers/1" for 127.0.0.1 at 2010-12-14 14:36:01 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPrayer Load (0.3ms)[0m  [1mSELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 1) LIMIT 1[0m
+Rendered prayers/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 1.4ms)
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "prayers" ("title", "request", "created_at", "updated_at") VALUES ('title 1', 'request 1', '2010-12-14 19:36:01.547091', '2010-12-14 19:36:01.547091')
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "prayers" ("title", "request", "created_at", "updated_at") VALUES ('title 2', 'request 2', '2010-12-14 19:36:01.549429', '2010-12-14 19:36:01.549429')[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "prayers" ("title", "request", "created_at", "updated_at") VALUES ('title 3', 'request 3', '2010-12-14 19:36:01.550957', '2010-12-14 19:36:01.550957')
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "prayers" ("title", "request", "created_at", "updated_at") VALUES ('title 4', 'request 4', '2010-12-14 19:36:01.552309', '2010-12-14 19:36:01.552309')[0m
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-14 14:36:01 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (0.3ms)[0m  SELECT "prayers".* FROM "prayers"
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 1.1ms)
