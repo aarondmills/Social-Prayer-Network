@@ -1244,3 +1244,391 @@ Started GET "/categories/new" for 127.0.0.1 at 2010-12-14 22:52:34 -0500
 Rendered categories/_form.html.erb (8.2ms)
 Rendered categories/new.html.erb within layouts/application (32.4ms)
 Completed 200 OK in 51ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-15 00:11:38 -0500
+
+SyntaxError (/home/aaron/Social-Prayer-Network/app/controllers/prayers_controller.rb:34: syntax error, unexpected '}', expecting keyword_end
+/home/aaron/Social-Prayer-Network/app/controllers/prayers_controller.rb:59: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (25.5ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.0ms)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-15 00:15:55 -0500
+
+SyntaxError (/home/aaron/Social-Prayer-Network/app/controllers/prayers_controller.rb:30: syntax error, unexpected '}', expecting keyword_end
+/home/aaron/Social-Prayer-Network/app/controllers/prayers_controller.rb:55: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (55.4ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (63.9ms)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-15 00:15:56 -0500
+
+SyntaxError (/home/aaron/Social-Prayer-Network/app/controllers/prayers_controller.rb:30: syntax error, unexpected '}', expecting keyword_end
+/home/aaron/Social-Prayer-Network/app/controllers/prayers_controller.rb:55: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.4ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.7ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-15 00:16:14 -0500
+
+SyntaxError (/home/aaron/Social-Prayer-Network/app/controllers/prayers_controller.rb:30: syntax error, unexpected '}', expecting keyword_end
+/home/aaron/Social-Prayer-Network/app/controllers/prayers_controller.rb:55: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (24.1ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.4ms)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-15 00:16:39 -0500
+  Processing by PrayersController#new as HTML
+Rendered prayers/_form.html.erb (10.7ms)
+Rendered prayers/new.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 103ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/prayers" for 127.0.0.1 at 2010-12-15 00:16:45 -0500
+  Processing by PrayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y/pZX7uDCDzmPRnOS8dqe49YI9h5nVzbALUD8Mfj4g0=", "prayer"=>{"request"=>"This is my request"}, "commit"=>"Create Prayer"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "prayers" ("request", "category_id", "user_id", "created_at", "updated_at") VALUES ('This is my request', NULL, NULL, '2010-12-15 05:16:45.468448', '2010-12-15 05:16:45.468448')
+Redirected to http://localhost:3000/prayers/1
+Completed 302 Found in 161ms
+
+
+Started GET "/prayers/1" for 127.0.0.1 at 2010-12-15 00:16:45 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPrayer Load (0.7ms)[0m  [1mSELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 1) LIMIT 1[0m
+Rendered prayers/show.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 64ms (Views: 46.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-15 00:17:07 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (0.7ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY prayers.position ASC
+SQLite3::SQLException: no such column: prayers.position: SELECT "prayers".* FROM "prayers" ORDER BY prayers.position ASC
+Rendered prayers/index.html.erb within layouts/application (30.9ms)
+Completed   in 47ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: prayers.position: SELECT "prayers".* FROM "prayers" ORDER BY prayers.position ASC):
+    8:     <th></th>
+    9:   </tr>
+    10: 
+    11: <% @prayers.each do |prayer| %>
+    12:   <tr>
+    13:     <td><%= prayer.request %></td>
+    14:     <td><%= link_to 'Show', prayer %></td>
+  app/views/prayers/index.html.erb:11:in `_app_views_prayers_index_html_erb___3472476104543570422_40848800__4238287260833532184'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  [1m[36mPrayer Load (0.6ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY prayers.position ASC[0m
+SQLite3::SQLException: no such column: prayers.position: SELECT "prayers".* FROM "prayers" ORDER BY prayers.position ASC
+  [1m[35mPrayer Load (0.2ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY prayers.position ASC
+SQLite3::SQLException: no such column: prayers.position: SELECT "prayers".* FROM "prayers" ORDER BY prayers.position ASC
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (79.5ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (86.4ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-15 00:17:37 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (1.0ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 51ms (Views: 38.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/prayers/1" for 127.0.0.1 at 2010-12-15 00:17:41 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPrayer Load (0.5ms)[0m  SELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 1) LIMIT 1
+Rendered prayers/show.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 54ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-15 00:17:44 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (0.8ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 97ms (Views: 84.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/prayers/1/edit" for 127.0.0.1 at 2010-12-15 00:17:46 -0500
+  Processing by PrayersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPrayer Load (0.6ms)[0m  SELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 1) LIMIT 1
+Rendered prayers/_form.html.erb (60.9ms)
+Rendered prayers/edit.html.erb within layouts/application (83.7ms)
+Completed 200 OK in 105ms (Views: 89.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/prayers/1" for 127.0.0.1 at 2010-12-15 00:17:49 -0500
+  Processing by PrayersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y/pZX7uDCDzmPRnOS8dqe49YI9h5nVzbALUD8Mfj4g0=", "prayer"=>{"request"=>"This is my request"}, "commit"=>"Update Prayer", "id"=>"1"}
+  [1m[36mPrayer Load (0.6ms)[0m  [1mSELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/prayers/1
+Completed 302 Found in 27ms
+
+
+Started GET "/prayers/1" for 127.0.0.1 at 2010-12-15 00:17:49 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPrayer Load (0.6ms)[0m  SELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 1) LIMIT 1
+Rendered prayers/show.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 55ms (Views: 38.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-15 00:17:52 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (0.9ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 98ms (Views: 40.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-15 00:17:57 -0500
+  Processing by PrayersController#new as HTML
+Rendered prayers/_form.html.erb (9.0ms)
+Rendered prayers/new.html.erb within layouts/application (76.4ms)
+Completed 200 OK in 96ms (Views: 81.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/prayers" for 127.0.0.1 at 2010-12-15 00:18:05 -0500
+  Processing by PrayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y/pZX7uDCDzmPRnOS8dqe49YI9h5nVzbALUD8Mfj4g0=", "prayer"=>{"request"=>"This is a second request Yay!"}, "commit"=>"Create Prayer"}
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "prayers" ("request", "category_id", "user_id", "created_at", "updated_at") VALUES ('This is a second request Yay!', NULL, NULL, '2010-12-15 05:18:05.783071', '2010-12-15 05:18:05.783071')
+Redirected to http://localhost:3000/prayers/2
+Completed 302 Found in 33ms
+
+
+Started GET "/prayers/2" for 127.0.0.1 at 2010-12-15 00:18:05 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPrayer Load (0.8ms)[0m  [1mSELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 2) LIMIT 1[0m
+Rendered prayers/show.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 55ms (Views: 37.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/prayers/2" for 127.0.0.1 at 2010-12-15 00:25:52 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPrayer Load (0.7ms)[0m  SELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 2) LIMIT 1
+ERROR: compiling _app_views_layouts_application_html_erb___4399043276684103023_41201780__4238287260833532184 RAISED /home/aaron/Social-Prayer-Network/app/views/layouts/application.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+....append= ( @page_title[0..10] '...' || 'Welcome' );@output_b...
+...                               ^
+Function body:           def _app_views_layouts_application_html_erb___4399043276684103023_41201780__4238287260833532184(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+<head>
+  <title>');@output_buffer.append= ( @page_title[0..10] '...' || 'Welcome' );@output_buffer.safe_concat(' | Social Prayer Network</title>
+  ');@output_buffer.append= ( stylesheet_link_tag :flutie, :cache => true );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+
+  ');@output_buffer.append= ( javascript_include_tag :defaults );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</head>
+<body>
+<div style="margin:30px;">
+<div style="margin:10px;">
+');   if user_signed_in? 
+@output_buffer.safe_concat('    Signed in as ');@output_buffer.append= ( current_user.email );@output_buffer.safe_concat('. Not you?
+    ');@output_buffer.append= ( link_to "Sign out", destroy_user_session_path );@output_buffer.safe_concat('
+');   else 
+@output_buffer.safe_concat('    ');@output_buffer.append= ( link_to "Sign up", new_user_registration_path );@output_buffer.safe_concat(' or ');@output_buffer.append= ( link_to "sign in", new_user_session_path );@output_buffer.safe_concat('
+');   end 
+@output_buffer.safe_concat('</div>
+
+');@output_buffer.append_if_string=  flash.each do |name, msg| 
+@output_buffer.safe_concat('<h1>');@output_buffer.append= ( content_tag :div, msg, :id => "flash_#{name}" );@output_buffer.safe_concat('</h1>
+'); end 
+@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</div>
+</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/aaron/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__709449456173642243__process_action__3044603030522174811__callbacks'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/warden-1.0.3/lib/warden/manager.rb:35:in `block in call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/home/aaron/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/aaron/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/aaron/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered prayers/show.html.erb within layouts/application (14.6ms)
+Completed   in 83ms
+
+ActionView::Template::Error (/home/aaron/Social-Prayer-Network/app/views/layouts/application.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+....append= ( @page_title[0..10] '...' || 'Welcome' );@output_b...
+...                               ^):
+    1: <!DOCTYPE html>
+    2: <html>
+    3: <head>
+    4:   <title><%= @page_title[0..10] '...' || 'Welcome' %> | Social Prayer Network</title>
+    5:   <%= stylesheet_link_tag :flutie, :cache => true %>
+    6: 
+    7: 
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (107.2ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (115.9ms)
+
+
+Started GET "/prayers/2" for 127.0.0.1 at 2010-12-15 00:26:55 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPrayer Load (0.5ms)[0m  [1mSELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 2) LIMIT 1[0m
+Rendered prayers/show.html.erb within layouts/application (72.6ms)
+Completed 200 OK in 95ms (Views: 78.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/prayers/2" for 127.0.0.1 at 2010-12-15 00:27:11 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPrayer Load (1.1ms)[0m  SELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 2) LIMIT 1
+Rendered prayers/show.html.erb within layouts/application (77.4ms)
+Completed 200 OK in 99ms (Views: 83.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-15 00:27:44 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (1.5ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 51ms (Views: 37.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/prayers/2" for 127.0.0.1 at 2010-12-15 00:27:48 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPrayer Load (0.6ms)[0m  SELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 2) LIMIT 1
+Rendered prayers/show.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 52ms (Views: 36.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-15 00:27:50 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (1.1ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 56ms (Views: 42.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-15 00:34:09 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (1.3ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 99ms (Views: 39.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/prayers/1" for 127.0.0.1 at 2010-12-15 00:34:11 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPrayer Load (0.6ms)[0m  [1mSELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 1) LIMIT 1[0m
+Rendered prayers/show.html.erb within layouts/application (79.3ms)
+Completed 200 OK in 102ms (Views: 85.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-15 00:34:13 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (1.4ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (97.8ms)
+Completed 200 OK in 119ms (Views: 104.6ms | ActiveRecord: 1.4ms)

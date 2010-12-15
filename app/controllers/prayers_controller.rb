@@ -1,12 +1,8 @@
 class PrayersController < ApplicationController
 
   def index
-    @prayers = Prayer.order("prayers.position ASC")
+    @prayers = Prayer.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @prayers }
-    end
   end
 
   def show
@@ -31,7 +27,7 @@ class PrayersController < ApplicationController
       if @prayer.save
         redirect_to(@prayer, :notice => 'Thank you for submitting a prayer request.')
       else
-        render :action => "new" }
+        render :action => "new"
       end
 
   end
