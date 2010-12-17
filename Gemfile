@@ -11,6 +11,7 @@ gem 'rspec-rails'
 gem 'spork'
 gem 'launchy' 
 gem 'formtastic', '~> 1.1.0'
+gem 'cancan'
 
 
 # Bundle edge Rails instead:

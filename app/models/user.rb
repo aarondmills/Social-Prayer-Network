@@ -7,5 +7,20 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-	has_many :prayers
+  has_many :prayers
+
+  ROLES = %w[admin moderator member]
+
+  def role_symbols
+    [role.to_sym]
+  end
+
+  def role?(role)
+    if User.role == role.to_s
+      return true
+    else
+      return false
+    end
+  end
+
 end

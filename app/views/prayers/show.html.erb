@@ -7,6 +7,7 @@
   Category:<%= @prayer.category.name %>
 </p>
 
-
+<% if can? :update, @prayer %>
 <%= link_to 'Edit', edit_prayer_path(@prayer) %> |
+<% end %>
 <%= link_to 'Back', prayers_path %>
