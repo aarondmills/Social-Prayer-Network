@@ -2766,3 +2766,519 @@ Started GET "/prayers" for 127.0.0.1 at 2010-12-16 18:35:11 -0500
   [1m[36mPrayer Load (0.9ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
 Rendered prayers/index.html.erb within layouts/application (36.9ms)
 Completed 200 OK in 55ms (Views: 42.4ms | ActiveRecord: 0.9ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:46:35 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (1.2ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (51.4ms)
+Completed   in 144ms
+
+ActionView::Template::Error (No expansion found for :superfish):
+    16: <!-- SCRIPTS -->
+    17: <script type="text/javascript" src="javascripts/jquery-1.4.js"></script>
+    18: <script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
+    19: <%= javascript_include_tag :superfish %>
+    20: <%= javascript_include_tag :prettyPhoto %>
+    21: <%= javascript_include_tag :slider %>
+    22: <%= javascript_include_tag :script %>
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__515095292548719908_28428040_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (103.6ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (111.1ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:50:03 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (1.1ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (18.5ms)
+Completed   in 37ms
+
+ActionView::Template::Error (No expansion found for :prettyPhoto):
+    17: <script type="text/javascript" src="javascripts/jquery-1.4.js"></script>
+    18: <script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
+    19: 
+    20: <%= javascript_include_tag :prettyPhoto %>
+    21: <%= javascript_include_tag :slider %>
+    22: <%= javascript_include_tag :script %>
+    23: <%= javascript_include_tag :application %>
+  app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__515095292548719908_35114220_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (155.7ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (163.6ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:50:17 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (0.9ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (17.9ms)
+Completed   in 36ms
+
+ActionView::Template::Error (No expansion found for :script):
+    17: <script type="text/javascript" src="javascripts/jquery-1.4.js"></script>
+    18: <script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
+    19: 
+    20: <%= javascript_include_tag :script %>
+    21: <%= javascript_include_tag :application %>
+    22: <!-- END SCRIPTS -->
+    23: <%= csrf_meta_tag %>
+  app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__515095292548719908_36278500_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (110.9ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (118.0ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:50:25 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (1.0ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (19.0ms)
+Completed   in 37ms
+
+ActionView::Template::Error (No expansion found for :application):
+    17: <script type="text/javascript" src="javascripts/jquery-1.4.js"></script>
+    18: <script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
+    19: 
+    20: <%= javascript_include_tag :application %>
+    21: <!-- END SCRIPTS -->
+    22: <%= csrf_meta_tag %>
+    23: </head>
+  app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__515095292548719908_36474300_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (113.5ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (120.9ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:50:35 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (1.2ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (37.4ms)
+Completed   in 97ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    108:       </div>
+    109:     </div>
+    110:     <div class="sidebar">
+    111:     <p>Signed in as <%= current_user.email %></p>
+    112:     
+    113:  
+    114:       <div class="sidebar-box">
+  app/views/layouts/application.html.erb:111:in `_app_views_layouts_application_html_erb__515095292548719908_34890580_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (115.6ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (123.1ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:51:43 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (1.0ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (61.6ms)
+Completed   in 80ms
+
+ActionView::Template::Error (No expansion found for :superfish):
+    15: <!-- SCRIPTS -->
+    16: <script type="text/javascript" src="javascripts/jquery-1.4.js"></script>
+    17: <script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
+    18: <%= javascript_include_tag :superfish %>
+    19: <%= javascript_include_tag :prettyPhoto %>
+    20: <%= javascript_include_tag :slider %>
+    21: <%= javascript_include_tag :script %>
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__515095292548719908_34618280_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (105.9ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (113.6ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:51:55 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (1.0ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (78.7ms)
+Completed   in 97ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    105:       </div>
+    106:     </div>
+    107:     <div class="sidebar">
+    108:     <p>Signed in as <%= current_user.email %></p>
+    109:     
+    110:  
+    111:       <div class="sidebar-box">
+  app/views/layouts/application.html.erb:108:in `_app_views_layouts_application_html_erb__515095292548719908_34993340_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (116.9ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (124.9ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:52:24 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (0.9ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (87.9ms)
+Completed   in 106ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    105:       </div>
+    106:     </div>
+    107:     <div class="sidebar">
+    108:     <p>Signed in as <%= current_user.email %></p>
+    109:     
+    110:  
+    111:       <div class="sidebar-box">
+  app/views/layouts/application.html.erb:108:in `_app_views_layouts_application_html_erb__515095292548719908_34876920_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (110.0ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (118.7ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:57:12 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (1.0ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (31.5ms)
+Completed   in 50ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    91:       </div>
+    92:     </div>
+    93:     <div class="sidebar">
+    94:     <p>Signed in as <%= current_user.email %></p>
+    95:     
+    96:  
+    97:       <div class="sidebar-box">
+  app/views/layouts/application.html.erb:94:in `_app_views_layouts_application_html_erb__515095292548719908_34949200_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (113.6ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (120.8ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:58:04 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (1.0ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 52ms (Views: 38.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:58:36 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (45.6ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (53.5ms)
+Completed 200 OK in 117ms (Views: 59.7ms | ActiveRecord: 45.6ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:58:50 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (0.9ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (20.4ms)
+Completed   in 86ms
+
+ActionView::Template::Error (No expansion found for :superfish):
+    15: <!-- SCRIPTS -->
+    16: <script type="text/javascript" src="javascripts/jquery-1.4.js"></script>
+    17: <script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
+    18: <%= javascript_include_tag :superfish %>
+    19: <%= javascript_include_tag :prettyPhoto %>
+    20: <%= javascript_include_tag :slider %>
+    21: <%= javascript_include_tag :script %>
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__515095292548719908_28360880_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (105.4ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (112.4ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:59:16 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (1.1ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (18.6ms)
+Completed   in 38ms
+
+ActionView::Template::Error (No expansion found for :application):
+    16: <script type="text/javascript" src="javascripts/jquery-1.4.js"></script>
+    17: <script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
+    18: 
+    19: <%= javascript_include_tag :application %>
+    20: <!-- END SCRIPTS -->
+    21: <%= csrf_meta_tag %>
+    22: </head>
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__515095292548719908_34941480_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (48.9ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (104.5ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (158.9ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:59:17 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (1.1ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (18.0ms)
+Completed   in 36ms
+
+ActionView::Template::Error (No expansion found for :application):
+    16: <script type="text/javascript" src="javascripts/jquery-1.4.js"></script>
+    17: <script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
+    18: 
+    19: <%= javascript_include_tag :application %>
+    20: <!-- END SCRIPTS -->
+    21: <%= csrf_meta_tag %>
+    22: </head>
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__515095292548719908_36268260_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (112.7ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (119.8ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 20:59:26 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (1.0ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (44.4ms)
+Completed   in 62ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    107:       </div>
+    108:     </div>
+    109:     <div class="sidebar">
+    110:     <p>Signed in as <%= current_user.email %></p>
+    111:     
+    112:  
+    113:       <div class="sidebar-box">
+  app/views/layouts/application.html.erb:110:in `_app_views_layouts_application_html_erb__515095292548719908_36527920_4594104755316943787'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (116.2ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (124.4ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-16 21:00:21 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (1.0ms)[0m  SELECT "prayers".* FROM "prayers"
+Rendered prayers/index.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 98ms (Views: 42.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-16 21:00:50 -0500
+  Processing by PrayersController#new as HTML
+  [1m[36mCategory Load (1.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_prayers__form_html_erb__1934252596560947658_36764360_3503734245936802238 at /home/aaron/Social-Prayer-Network/app/views/prayers/_form.html.erb:2)
+Rendered prayers/_form.html.erb (39.1ms)
+Rendered prayers/new.html.erb within layouts/application (66.3ms)
+Completed 200 OK in 134ms (Views: 70.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/prayers/javascripts/jquery-1.4.js" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/javascripts/jquery-1.4.js"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/prayers/javascripts/jquery.tools.min.js" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/javascripts/jquery.tools.min.js"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-16 21:00:51 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started POST "/prayers" for 127.0.0.1 at 2010-12-16 21:01:07 -0500
+  Processing by PrayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MPfUHFYgqu/FcQiskE5CUx1UJ8WSXu8PxxFduacmzM4=", "prayer"=>{"request"=>"This is a new request", "category_id"=>"1"}, "commit"=>"Create Prayer"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "prayers" ("request", "category_id", "user_id", "created_at", "updated_at") VALUES ('This is a new request', 1, NULL, '2010-12-17 02:01:07.719347', '2010-12-17 02:01:07.719347')[0m
+Redirected to http://localhost:3000/prayers/7
+Completed 302 Found in 51ms
+
+
+Started GET "/prayers/7" for 127.0.0.1 at 2010-12-16 21:01:07 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPrayer Load (0.5ms)[0m  SELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 7) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE ("categories"."id" = 1) LIMIT 1[0m
+Rendered prayers/show.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 141ms (Views: 121.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/prayers/javascripts/jquery-1.4.js" for 127.0.0.1 at 2010-12-16 21:01:07 -0500
+
+ActionController::RoutingError (No route matches "/prayers/javascripts/jquery-1.4.js"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/prayers/javascripts/jquery.tools.min.js" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/javascripts/jquery.tools.min.js"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-16 21:01:08 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
