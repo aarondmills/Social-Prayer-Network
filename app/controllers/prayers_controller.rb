@@ -25,7 +25,7 @@ class PrayersController < ApplicationController
     @prayer = Prayer.new(params[:prayer])
 
       if @prayer.save
-        redirect_to(@prayer, :notice => 'Thank you for submitting a prayer request.')
+        redirect_to(@prayer, :notice => 'We have received your request ')
       else
         render :action => "new"
       end
@@ -37,7 +37,7 @@ class PrayersController < ApplicationController
     @prayer = Prayer.find(params[:id])
 
       if @prayer.update_attributes(params[:prayer])
-       redirect_to(@prayer, :notice => 'Prayer was successfully updated.')
+       redirect_to(@prayer, :notice => 'Prayer Request Updated!')
       else
        render :action => "edit"
       end

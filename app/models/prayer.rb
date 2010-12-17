@@ -4,7 +4,9 @@ class Prayer < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :user
 
-	validates_presence_of :request, :category_id
+	validates_presence_of :category_id
+	validates_presence_of :request, :on => :create, :message => "Cant be blank"
+	validates_presence_of :request, :on => :update, :message => "You can not leave your request blank!"
 
 	
 

@@ -4,19 +4,30 @@
 <title><%= @page_title || 'Welcome' %> | Social Prayer Network</title>
 <!-- THE STYLES -->
 <%= stylesheet_link_tag :all, :cache => true %>
+<%= stylesheet_link_tag 'superfish', :cache => true %>
+<%= stylesheet_link_tag 'style', :cache => true %>
+<%= stylesheet_link_tag 'fonts', :cache => true %>
+<%= stylesheet_link_tag 'prettyPhoto', :cache => true %>
+
+<!--[if lte IE 6]>
+<%= stylesheet_link_tag 'style_ie6', :cache => true %>
+<script type="text/javascript" src="javascripts/supersleight.js"></script>
 <![endif]-->
 <!--[if lte IE 7]>
-<link href="styles/style_ie7.css" rel="stylesheet" type="text/css" />  
+<%= stylesheet_link_tag 'style_ie7', :cache => true %> 
 <![endif]-->
 <!--[if lte IE 8]>
-<link href="styles/style_ie8.css" rel="stylesheet" type="text/css" />  
+<%= stylesheet_link_tag 'style_ie8', :cache => true %>
 <![endif]-->
 <!--END THE STYLES -->
 <!-- SCRIPTS -->
+
 <script type="text/javascript" src="javascripts/jquery-1.4.js"></script>
 <script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
-
-<!-- END SCRIPTS -->
+<script type="text/javascript" src="javascripts/superfish.js"></script>
+<script type="text/javascript" src="javascripts/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="javascripts/slider.js"></script>
+<script type="text/javascript" src="javascripts/script.js"></script>
 <%= csrf_meta_tag %>
 </head>
 <body>
@@ -93,9 +104,7 @@
   <div id="page-title">
     <div id="page-title-shadow"></div>
     <div class="center">
-<% flash.each do |name, msg| %>
-<h6><%= content_tag :div, msg, :id => "flash_#{name}" %></h6>
-<% end %>
+	<h6><%= @page_title %></h6>
       
     </div>
     <div id="page-title-shadow-bottom"></div>
@@ -103,7 +112,13 @@
   <div id="content-container" class="center sidebar-to-left">
     <div id="content">
       <div class="blog-post">
+
+	<% flash.each do |name, msg| %>
+	<h6><%= content_tag :div, msg, :id => "flash_#{name}" %></h6>
+	<% end %>
+
         <%= yield %>
+
       </div>
     </div>
     <div class="sidebar">
