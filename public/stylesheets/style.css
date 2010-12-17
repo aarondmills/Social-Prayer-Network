@@ -5,7 +5,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 	padding: 0;
 	border: 0;
 	outline: 0;
-	font-size: 100%;
+	font-size: 16px;
 	vertical-align: baseline;
 	background: transparent;
 }
@@ -95,7 +95,11 @@ h1,h2,h3,h4,h5,h6 {
 	margin-bottom: 10px;
 	font-weight: 100;
 	font-family: 'DroidSerifItalic';
-	font-style: italic;
+	
+}
+
+h1,h2,h3,h4 {
+border-bottom:1px solid #000;
 }
 
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
@@ -529,7 +533,7 @@ body {
 	background-color: #b0b0b0;
 	/*
 	HERE ARE SOME NICE COLORS (THE ONES FROM THE DEMO) THAT YOU CAN CHOOSE FROM:
-    background-color:#b0b0b0;
+    
     background-color:#919191; 
     background-color:#595959; 
     background-color:#d9ceb2;
@@ -797,6 +801,7 @@ width:942px;
 	height: auto;
 	min-height: 200px;
 	width: 600px;
+	font-size:18px;
 }
 
 #full-width{
@@ -1922,16 +1927,16 @@ left:0px;
 /*------------- CONTACT PAGE --------------*/
 
 input {
-	width: 300px;
-	height: 24px;
-	border: 1px solid #ccc;
-	background-color: #fff;
+	width: 150px;
+	height: 35px;
+	border: 1px solid #eee;
+	
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-left: 5px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 
 textarea {
@@ -1939,7 +1944,7 @@ textarea {
 	height: 150px;
 	padding-top: 0px;
 	font-family: Arial;
-	font-size: 13px;
+	font-size: 16px;
 	padding-top: 8px;
 	padding-bottom: 8px;
 	border: 1px solid #ccc;

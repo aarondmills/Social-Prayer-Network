@@ -1,7 +1,7 @@
 <%= semantic_form_for(@prayer) do |f| %>
   <% f.inputs do %>
-	<%= f.input :request %>
-	<%= f.input :category, :include_blank => false %>
+	<%= f.input :request, :as => :text, :input_html => { :class => 'my-request' }, :label => "Your Prayer Request"  %><br />
+	<%= f.input :category, :include_blank => false, :input_html => { :class => 'my-request' }  %>
    <% end %>
-   <%= f.buttons %>	
+   <%= f.buttons  %>	
 <% end %>

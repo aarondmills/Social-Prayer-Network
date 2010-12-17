@@ -3,7 +3,7 @@
 <head>
 <title><%= @page_title || 'Welcome' %> | Social Prayer Network</title>
 <!-- THE STYLES -->
-<%= stylesheet_link_tag :all, :cache => true %>
+
 <%= stylesheet_link_tag 'superfish', :cache => true %>
 <%= stylesheet_link_tag 'style', :cache => true %>
 <%= stylesheet_link_tag 'fonts', :cache => true %>
@@ -11,7 +11,7 @@
 
 <!--[if lte IE 6]>
 <%= stylesheet_link_tag 'style_ie6', :cache => true %>
-<script type="text/javascript" src="javascripts/supersleight.js"></script>
+<%= javascript_include_tag "supersleight", :cache => true %>
 <![endif]-->
 <!--[if lte IE 7]>
 <%= stylesheet_link_tag 'style_ie7', :cache => true %> 
@@ -21,13 +21,9 @@
 <![endif]-->
 <!--END THE STYLES -->
 <!-- SCRIPTS -->
-
-<script type="text/javascript" src="javascripts/jquery-1.4.js"></script>
-<script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
-<script type="text/javascript" src="javascripts/superfish.js"></script>
-<script type="text/javascript" src="javascripts/jquery.prettyPhoto.js"></script>
-<script type="text/javascript" src="javascripts/slider.js"></script>
-<script type="text/javascript" src="javascripts/script.js"></script>
+<%= javascript_include_tag "jquery-1.4", "jquery.tools.min", "superfish", "jquery.prettyPhoto", "slider", "script", :cache => true %>
+<%= stylesheet_link_tag 'formtastic', :cache => true %>
+<%= stylesheet_link_tag 'formtastic_changes', :cache => true %>
 <%= csrf_meta_tag %>
 </head>
 <body>
@@ -111,15 +107,15 @@
   </div>
   <div id="content-container" class="center sidebar-to-left">
     <div id="content">
-      <div class="blog-post">
+    
 
 	<% flash.each do |name, msg| %>
-	<h6><%= content_tag :div, msg, :id => "flash_#{name}" %></h6>
+	<h2><%= content_tag :div, msg, :id => "flash_#{name}" %></h2>
 	<% end %>
 
         <%= yield %>
 
-      </div>
+    
     </div>
     <div class="sidebar">
     <% if user_signed_in? %><p>Signed in as <%= current_user.email %></p><% end %>

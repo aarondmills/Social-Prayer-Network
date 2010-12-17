@@ -1,14 +1,43 @@
-/* -------------------------------------------------------------------------------------------------
+div.error, div.notice, div.success,
+#flash_failure, #flash_success, #flash_notice {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
 
-Load this stylesheet after formtastic.css in your layouts to override the CSS to suit your needs.
-This will allow you to update formtastic.css with new releases without clobbering your own changes.
+div.error,
+#flash_failure {
+  background: #FBE3E4;
+  color: #D12F19;
+  border-color: #FBC2C4;
+}
+div.error a,
+#flash_failure a { color: #D12F19; }
 
-For example, to make the inline hint paragraphs a little darker in color than the standard #666:
+div.notice,
+#flash_notice {
+  background: #FFF6BF;
+  color: #817134;
+  border-color: #FFD324;
+}
+div.notice a,
+#flash_notice a { color: #817134; }
 
-form.formtastic fieldset > ol > li p.inline-hints { color:#333; }
+div.success,
+#flash_success {
+  background: #E6EFC2;
+  color: #529214;
+  border-color: #C6D880;
+}
+div.success a,
+#flash_success a { color: #529214; }
 
-HINT:
-The following style may be *conditionally* included for improved support on older versions of IE(<8)
-form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
+.my-request{
+padding:30px;
+}
 
---------------------------------------------------------------------------------------------------*/
+#prayer_request {
+padding:15px;
+}
