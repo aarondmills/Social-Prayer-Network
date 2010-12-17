@@ -11,11 +11,12 @@
 
   <p><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
-  
+  <% if @user.role == "admin" %>
   <p>
   <%= f.label :role %><br />
   <%= f.collection_select :role, User::ROLES, :to_s, :titleize %>
   </p>
+<% end %>
 
   <p><%= f.submit "Sign up" %></p>
 <% end %>
