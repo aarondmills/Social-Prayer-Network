@@ -1,0 +1,182 @@
+#menu-container,#menu{
+ position:relative;
+ z-index:102;
+}
+
+#menu{
+padding-top:20px;
+	padding-bottom:20px;
+	margin-top:-20px;
+	margin-bottom:-10px;
+}
+
+#menu-container{
+	padding-bottom:0px;
+	margin-bottom:-20px;
+}
+
+#menu ul ul {
+	top: 15px;
+}
+
+#menu ul ul ul{
+	border-top:1px solid #ebebeb;
+	border-width:0px;
+	top:0px;
+}
+
+#menu ul li li {
+	display:block;
+	float:left;
+}
+
+
+
+#slider-navigation-container{
+	padding-top:4px;
+	padding-bottom:0px;
+	height:80px;
+
+}
+
+
+#slider-navigation{
+	margin-top:-45px;
+}
+
+#menu ul .sf-sub-indicator{
+	display:none;
+}
+
+#right-arrow{
+
+right:-960px;
+top:20px;
+	
+}
+
+#left-arrow{
+	
+top:20px;	
+	
+}
+
+
+hr { 
+	margin-top:-10px;
+
+}
+.post-info{
+
+	position:relative;
+	top:-6px;
+	font-size:11px;
+
+}
+
+.four-columns,.four-columns-4 {
+	width: 200px;
+
+}
+
+#footer-icons ul{
+	display:inline;
+	display:inline-table;
+	height:50px;
+	width:206px;
+
+}
+
+#footer-icons ul li a{
+	width:32px;
+
+}
+
+#footer-line{
+	height:5px;
+	margin-top:-17px;
+	
+}
+
+#footer-projcets ul li a{
+	padding:5px;
+}
+
+
+#site-intro{	
+	margin-bottom:45px;
+	margin-top:15px;
+}
+
+.blog-post-img{
+	margin-left:-2px;
+}
+
+img.shadow-frame{
+	border:1px solid #ebebeb;
+	padding:8px;
+}
+
+#gallery {
+overflow:hidden;
+display:block;
+position:relative;
+}
+
+#line-top {
+font-size:2px;
+}
+
+.drop-caps {
+line-height:0.9em;
+}
+
+.services-box a.button, .pricing-box a.button{
+	width:210px;
+
+}
+
+.tabs-container{
+	height:200px;
+}
+
+
+.portfolio-sidebar img.shadow-frame {
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+#sidebar-projects li a {
+
+	margin-bottom:10px;
+	margin-right:10px;
+
+}
+
+#sidebar-projects {
+	float: left;
+	width: 280px;
+	padding-left: 1px;
+	margin-top:10px;
+	margin-bottom:20px;
+	}
+
+#sidebar-projects img {
+	margin-bottom:0px;
+	margin-right:0px;
+	padding:7px;
+	float:left;
+}
+
+#testimonials{
+width:600px;	
+}
+
+#sidebar-projects li a{
+	margin-right:5px;	
+}
+
+#sidebar-projects li {
+height:120px;
+width:120px;
+float:left;
+}

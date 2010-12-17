@@ -10,6 +10,8 @@ gem 'cucumber'
 gem 'rspec-rails'
 gem 'spork'
 gem 'launchy' 
+gem 'formtastic', '~> 1.1.0'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
