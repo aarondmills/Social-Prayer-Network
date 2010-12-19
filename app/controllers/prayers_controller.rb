@@ -23,7 +23,8 @@ class PrayersController < ApplicationController
 
 
   def create
-    @prayer = Prayer.new(params[:prayer])
+    @prayer  = current_user.prayers.build(params[:prayer])
+
 
       if @prayer.save
         redirect_to(@prayer, :notice => 'We have received your request ')

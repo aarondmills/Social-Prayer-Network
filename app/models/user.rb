@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
 
   ROLES = %w[admin moderator member]
 
-  before_save :set_sensible_defaults
+  after_initialize :set_sensible_defaults
+
+  
 
 private
 

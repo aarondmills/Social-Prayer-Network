@@ -1,5 +1,5 @@
 class Prayer < ActiveRecord::Base
-	attr_accessible :request, :category_id
+	attr_accessible :request, :category_id, :user_id
 
 	belongs_to :category
 	belongs_to :user
