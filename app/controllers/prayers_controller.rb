@@ -2,7 +2,9 @@ class PrayersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @prayers = Prayer.all
+
+    @prayers = Prayer.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
+
 
   end
 
