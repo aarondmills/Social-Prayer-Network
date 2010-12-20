@@ -23,4 +23,6 @@ Aaron Mills</p>
 <%= will_paginate @prayers %>
 <br />
 
+<% if can? :create, Resource %>
 <%= link_to 'New Resource', new_resource_path %>
+<% end %>
