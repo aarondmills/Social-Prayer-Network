@@ -4,7 +4,7 @@ class ResourcesController < ApplicationController
   def index
     if params[:catid]
       @category = Category.find(params[:catid])
-      @resources = Resource.returncat(params[:catid])
+      @resources = Resource.returncat(params[:catid]).paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
     else
       @resources = Resource.find(:all)
     end

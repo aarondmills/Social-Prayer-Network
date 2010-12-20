@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @users = User.find(:all)
+    @users = User.find(:all).paginate :page => params[:page], :per_page => 20, :order => 'created_at DESC'
   end
   
   def new

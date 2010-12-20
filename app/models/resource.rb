@@ -1,4 +1,6 @@
 class Resource < ActiveRecord::Base
+	cattr_reader :per_page
+	@@per_page = 10
 	belongs_to :category
 	attr_accessible :title, :description, :url, :category_id
 

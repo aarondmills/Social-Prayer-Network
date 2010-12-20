@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
 
   before_save :set_sensible_defaults
 
+  cattr_reader :per_page
+  @@per_page = 10
+
   
 
 private

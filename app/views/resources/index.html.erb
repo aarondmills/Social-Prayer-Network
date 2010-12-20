@@ -1,12 +1,16 @@
 <p id="notice"><%= notice %></p>
-<% if @category %>
-<h1>Dealing With <%= @category.name %></h1>
+
+<h1>Thank you for submitting your prayer request</h1>
+<p><%= current_user.email %>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following <%= @category.name %> resources helpful.</p>
+<p>Best Regards,<br />
+Aaron Mills</p>
+<h2>Dealing With <%= @category.name %></h2>
 
 <% if can? :update, Category%>
 <%= link_to 'Edit This Category Name', edit_category_path(@category) %>
 <% end %>
 
-<% end %>
+
 
 <% @resources.each do |resource| %>
 <h3><%= resource.title %></h3>
@@ -15,6 +19,8 @@
 <% end %>
 
 
+<br />
+<%= will_paginate @prayers %>
 <br />
 
 <%= link_to 'New Resource', new_resource_path %>

@@ -14,6 +14,8 @@ Spn::Application.routes.draw do
   root :to => "prayers#index"
   resources :user, :controller => "users"
 
+  match 'members/' => 'users#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -9,7 +9,7 @@
 	  <li><% if can? :create, @prayer %><%=  link_to "Submit a Request", new_prayer_path %><% end %></li>
           
          
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="<%= root_url %>members">Members</a></li>
           <li><a href="contact.html">Contacts</a></li>
 	  <% if user_signed_in? %>
           <li><%= link_to "Sign out", destroy_user_session_path %></li>
