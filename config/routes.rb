@@ -4,7 +4,15 @@ Spn::Application.routes.draw do
   resources :categories
 
   devise_for :users
-    root :to => "prayers#index"
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+   get '/logout' => 'devise/sessions#destroy'
+  end
+  
+  root :to => "prayers#index"
+  resources :user, :controller => "users"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

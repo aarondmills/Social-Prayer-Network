@@ -1,0 +1,22 @@
+<div id="menu-container">
+      <div class="hr"></div>
+      
+      <div id="menu" class="center">
+	
+        <ul class="sf-menu">
+          <li><%= link_to "Home", root_url %></li>
+          <li><%=  link_to "Prayer Requests", prayers_path %></li>
+	  <li><% if can? :create, @prayer %><%=  link_to "Submit a Request", new_prayer_path %><% end %></li>
+          
+         
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contacts</a></li>
+	  <% if user_signed_in? %>
+          <li><%= link_to "Sign out", destroy_user_session_path %></li>
+	  <% else %>
+	  <li><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %></li>
+	  <% end %>
+        </ul>
+      </div>
+      <div class="hr"></div>
+    </div>

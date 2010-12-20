@@ -4,12 +4,10 @@ class Ability
   def initialize(user)
     user ||= User.new # This is just a guest user, in case they have no role
     
-    if user.role == "admin"
-      can :manage, :all
-    elsif user.role == 'moderator'
-      can :manage, Prayer
-    elsif user.role == 'member'
-      can :read, :all
+     can :manage, :all if user.role == "admin"
+     can :manage, Prayer if user.role == "moderator"
+    if user.role == 'member'
+      can :read, [User, Prayer, Category]
       can :create, Prayer
       can :update, Prayer do |prayer|
         prayer.try(:user) == user

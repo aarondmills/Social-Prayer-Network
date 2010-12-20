@@ -24,4 +24,4 @@
 
 <br />
 
-<%= link_to 'New Prayer', new_prayer_path %>
+<% if can? :create, @prayer %><%= link_to 'New Prayer', new_prayer_path %><% end %>

@@ -24,78 +24,16 @@
 <%= javascript_include_tag "jquery-1.4", "jquery.tools.min", "superfish", "jquery.prettyPhoto", "slider", "script", :cache => true %>
 <%= stylesheet_link_tag 'formtastic', :cache => true %>
 <%= stylesheet_link_tag 'formtastic_changes', :cache => true %>
+<%= javascript_include_tag :defaults %>
 <%= csrf_meta_tag %>
 </head>
 <body>
 <div id="main-container">
   <div id="line-top"></div>
   <div id="header" >
+  
     <div id="logo-container" class="center"><a href="index.html" ></a></div>
-    <div id="menu-container">
-      <div class="hr"></div>
-      <div id="menu" class="center">
-        <ul class="sf-menu">
-          <li><a href="index.html"> Home </a>
-            <ul>
-              <li><a href="index.html"> Services layout</a></li>
-              <li><a href="index2.html"> Featured posts </a></li>
-            </ul>
-          </li>
-          <li><a href="index2.html">Sliders</a>
-            <ul>
-              <li><a href="index2.html">Thumbnail slider</a></li>
-              <li><a href="index5.html">Nivo Slider</a></li>
-              <li><a href="index4.html">Fader</a></li>
-              <li><a href="index3.html">Big Slider</a></li>
-            </ul>
-          </li>
-          <li><a href="portfolio.html">Portfolio</a>
-            <ul>
-              <li><a href="portfolio.html">Showcase</a></li>
-              <li><a href="portfolio2.html">Gallery</a></li>
-              <li><a href="portfolio4.html">Description Gallery</a></li>
-            </ul>
-          </li>
-          <li><a href="typography.html">Features</a>
-            <ul>
-              <li><a href="typography.html">Typography</a></li>
-              <li><a href="elements.html">Elements</a></li>
-              <li><a href="boxes.html">Pricing Boxes</a></li>
-              <li><a href="tabs.html">jQuery Tabs</a></li>
-              <li><a href="columns.html">Content Columns</a></li>
-              <li><a href="#">Drop Down Menu</a>
-                <ul>
-                  <li><a href="#">Menu Link 1</a></li>
-                  <li><a href="#">Menu Link 2</a></li>
-                  <li><a href="#">Another Level</a>
-                    <ul>
-                      <li><a href="#">Menu Link 1</a></li>
-                      <li><a href="#">Menu Link 2</a></li>
-                      <li><a href="#">Menu Link 3</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="leftsidebar.html"> Layouts </a>
-            <ul>
-              <li><a href="leftsidebar.html"> Left Sidebar</a></li>
-              <li><a href="rightsidebar.html"> Right Sidebar </a></li>
-              <li><a href="fullwidth.html"> Full Width </a></li>
-            </ul>
-          </li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contacts</a></li>
-	  <% if user_signed_in? %>
-          <li><%= link_to "Sign out", destroy_user_session_path %></li>
-	  <% else %>
-	  <li><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %></li>
-	  <% end %>
-        </ul>
-      </div>
-      <div class="hr"></div>
-    </div>
+    <%= render 'layouts/menu' %>
   </div>
   <div id="page-title">
     <div id="page-title-shadow"></div>

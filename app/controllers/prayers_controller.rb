@@ -24,6 +24,7 @@ class PrayersController < ApplicationController
 
   def create
     @prayer  = current_user.prayers.build(params[:prayer])
+    authorize! :create, @prayer
 
 
       if @prayer.save
@@ -46,7 +47,13 @@ class PrayersController < ApplicationController
 
   end
 
+  def delete
+    @prayer = Prayer.find(params[:id])
+    @prayer.destroy
 
+    redirect_to(prayers_url, :notice => "Your prayer request has been removed.")
+
+  end
   def destroy
     @prayer = Prayer.find(params[:id])
     @prayer.destroy
