@@ -26,7 +26,7 @@ class PrayersController < ApplicationController
 
   def create
     @prayer  = current_user.prayers.build(params[:prayer])
-    authorize! :create, @prayer
+    
 
 
       if @prayer.save

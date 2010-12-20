@@ -7,8 +7,8 @@ class Ability
      can :manage, :all if user.role == "admin"
      can :manage, Prayer if user.role == "moderator"
     if user.role == 'member'
-      can :read, [User, Prayer, Category, Resource]
       can :create, Prayer
+	can :read, :all
       can :update, Prayer do |prayer|
         prayer.try(:user) == user
       end
