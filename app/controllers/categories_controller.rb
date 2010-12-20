@@ -24,15 +24,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def resource
-    @category = Category.find(params[:id])
-    @resources = Resource.returncat(params[:id]).limit(20)
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @category }
-    end
-  end
 
   # GET /categories/new
   # GET /categories/new.xml

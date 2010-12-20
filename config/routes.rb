@@ -4,7 +4,6 @@ Spn::Application.routes.draw do
   resources :prayers
 
   resources :categories
-  match 'categories/resource/:id' => 'category#resource'
 
   devise_for :users
   devise_scope :user do
