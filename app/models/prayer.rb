@@ -8,6 +8,8 @@ class Prayer < ActiveRecord::Base
 	validates_presence_of :request, :on => :create, :message => "Cant be blank"
 	validates_presence_of :request, :on => :update, :message => "You can not leave your request blank!"
 
+	scope :returncat, lambda {|category| where(:category_id => category)}
+
 	
 
 	
