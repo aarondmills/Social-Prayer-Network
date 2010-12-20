@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dealing With <%= @category.name %></h1>
+
+<% if can? :update, Category%>
+<%= link_to 'Edit This Category Name', edit_category_path(@category) %>
+<% end %>
+
+<% @resources.each do |resource| %>
+<p><%= resource.title %></p><br />
+<p><%= resource.url %></p>
+<% end %>
+
+

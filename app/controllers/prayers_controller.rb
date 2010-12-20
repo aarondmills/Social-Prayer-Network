@@ -28,7 +28,9 @@ class PrayersController < ApplicationController
 
 
       if @prayer.save
-        redirect_to(@prayer, :notice => 'We have received your request ')
+        
+	redirect_to :controller => 'resources', :catid => @prayer.category_id
+
       else
         render :action => "new"
       end
