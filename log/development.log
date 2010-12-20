@@ -29426,3 +29426,861 @@ Started GET "/" for 127.0.0.1 at 2010-12-19 15:22:54 -0500
   [1m[35mPrayer Load (3.4ms)[0m  SELECT "prayers".* FROM "prayers"
 Rendered prayers/index.html.erb within layouts/application (76.6ms)
 Completed 200 OK in 150ms (Views: 82.6ms | ActiveRecord: 3.4ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 15:33:23 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (3.9ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 219ms (Views: 40.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/prayers/5" for 127.0.0.1 at 2010-12-19 15:33:25 -0500
+  Processing by PrayersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mPrayer Load (1.3ms)[0m  [1mSELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 5) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 5) LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE ("categories"."id" = 2) LIMIT 1[0m
+Rendered prayers/show.html.erb within layouts/application (93.5ms)
+Completed 200 OK in 206ms (Views: 99.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-19 15:33:26 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-19 15:33:26 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-19 15:33:26 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.2ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-19 15:33:26 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-19 15:33:26 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (15.6ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-19 15:33:26 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.9ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-19 15:33:26 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.8ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-19 15:33:26 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-19 15:33:26 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:30 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 196ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:31 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 103ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:31 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:31 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 54ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:31 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 95ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:31 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 99ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:32 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 55ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:32 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 55ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:32 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 97ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:32 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 96ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:32 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 94ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:32 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:33 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 99ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:33 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 97ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:33 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 97ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:33 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:33 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 106ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:33 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 106ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:34 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 96ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:34 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:34 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 54ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:43 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:43 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 103ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:43 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:43 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:44 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 101ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:44 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:44 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:44 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:44 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:44 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 65ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 114ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 95ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 54ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 55ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 103ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 99ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 55ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:13:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 102ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-19 20:14:08 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 99ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:08 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 107ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:09 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 55ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:09 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 99ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:09 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:09 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 103ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:09 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 58ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:09 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 103ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:10 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:10 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 101ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:10 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:10 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:10 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:10 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 105ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:11 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 55ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:11 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:11 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 101ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:11 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 101ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:11 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 55ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:11 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:11 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 97ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:36 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 101ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:36 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 58ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:36 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 55ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:36 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 105ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:37 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 99ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:37 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 59ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:37 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:37 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 105ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:37 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 107ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:37 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:38 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 54ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:38 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:38 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:38 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 94ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:38 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 55ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:38 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 108ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:39 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 102ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:39 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 104ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:39 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:39 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 102ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:39 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 102ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:44 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 105ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:44 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 62ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:44 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 64ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:44 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 109ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 103ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 61ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 101ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 104ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:45 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 104ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 103ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 60ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:46 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 101ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:47 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 120ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:47 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:47 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 61ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:47 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 103ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:14:47 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:03 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 166ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:03 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 99ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:03 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 61ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:04 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:04 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 107ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:04 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:04 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 96ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:04 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 57ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:04 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:05 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 98ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:05 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 92ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:05 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 55ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:05 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 101ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:05 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 97ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:05 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 95ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:06 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:06 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:06 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 99ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:06 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 100ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:06 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 58ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:15:06 -0500
+  Processing by PrayersController#index as HTML
+Completed   in 56ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-19 20:16:37 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mPrayer Load (3.2ms)[0m  [1mSELECT "prayers".* FROM "prayers"[0m
+Rendered prayers/index.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 174ms (Views: 67.9ms | ActiveRecord: 3.2ms)
