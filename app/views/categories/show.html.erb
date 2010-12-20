@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
+<h1><%= @category.name %> Requests</h1>
+
+<% if can? :update, Category%>
+<%= link_to 'Edit This Category Name', edit_category_path(@category) %>
+<% end %>
 
 <% @prayers.each do |prayer| %>
 <p><%= prayer.request %></p>
 <% end %>
 
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
