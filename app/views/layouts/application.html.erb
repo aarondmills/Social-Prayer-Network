@@ -57,11 +57,14 @@
     </div>
     <div class="sidebar">
     <% if user_signed_in? %><p><img src="<%= avatar_url(current_user) %>" style="float:left;margin-right:10px;margin-bottom:10px;" />Signed in as <%= current_user.email %></p><% end %>
+
+
     
  
       <div class="sidebar-box">
         <h4>From the Blog</h4>
         <div class="double-hr"></div>
+	<% if user_signed_in? %><p>You have submitted <%= current_user.prayers.count %> requests to the network</p><% end %>
         <ul>
           <li><a href="#">Create a Realistic Picture Frame With Photoshop</a></li>
           <li><a href="#">Psdtuts joins the Smashing Network </a></li>
