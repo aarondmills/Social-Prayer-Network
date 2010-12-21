@@ -57914,3 +57914,2160 @@ ActionView::Template::Error (undefined method `email' for nil:NilClass):
 Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
 Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (205.4ms)
 Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (214.7ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateResources (20101220054000)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mDROP TABLE "resources"[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20101220054000'
+Migrating to AddRoleToUsers (20101217070201)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "role" varchar(255)) [0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE UNIQUE INDEX "temp_index_altered_users_on_reset_password_token" ON "altered_users" ("reset_password_token")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('temp_index_altered_users_on_reset_password_token')
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE UNIQUE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")[0m
+  [1m[35mSQL (0.5ms)[0m  DROP TABLE "users"
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('temp_index_altered_users_on_email')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('temp_index_altered_users_on_reset_password_token')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (3.6ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  DROP TABLE "altered_users"
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20101217070201'[0m
+Migrating to CreatePrayers (20101215025655)
+  [1m[35mSQL (2.1ms)[0m  DROP TABLE "prayers"
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20101215025655'[0m
+Migrating to CreateCategories (20101215024431)
+  [1m[35mSQL (0.5ms)[0m  DROP TABLE "categories"
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20101215024431'[0m
+Migrating to DeviseCreateUsers (20101214043657)
+  [1m[35mSQL (0.8ms)[0m  DROP TABLE "users"
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20101214043657'[0m
+  [1m[35mSQL (0.9ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20101214043657)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101214043657')[0m
+Migrating to CreateCategories (20101215024431)
+  [1m[35mSQL (1.0ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101215024431')[0m
+Migrating to CreatePrayers (20101215025655)
+  [1m[35mSQL (0.6ms)[0m  CREATE TABLE "prayers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "request" varchar(255), "category_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101215025655')[0m
+Migrating to AddRoleToUsers (20101217070201)
+  [1m[35mSQL (0.9ms)[0m  ALTER TABLE "users" ADD "role" varchar(255)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101217070201')[0m
+Migrating to CreateResources (20101220054000)
+  [1m[35mSQL (0.6ms)[0m  CREATE TABLE "resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "url" varchar(255), "category_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101220054000')[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("categories")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("prayers")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("resources")[0m
+  [1m[35mSQL (3.8ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.4ms)[0m  PRAGMA index_info('index_users_on_email')
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-21 01:53:40 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mPrayer Load (0.3ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendered layouts/_menu.html.erb (2.6ms)
+Rendered prayers/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 145ms (Views: 17.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.0ms)
+Rendered layouts/_menu.html.erb (28.5ms)
+Rendered devise/registrations/new.html.erb within layouts/application (60.6ms)
+Completed 200 OK in 106ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/users/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.1ms)
+
+
+Started GET "/users/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/users/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/users/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/users/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/users/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/users/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/users/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/users/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/users/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/users/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/users/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/users/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:53:44 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2010-12-21 01:53:56 -0500
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WYs7j9gsRhAGBCLTTUgKjfY4p+8c9m7zaxUbJBBh82Y=", "user"=>{"email"=>"aaron@jailbreakcreative.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('aaron@jailbreakcreative.com')) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "password_salt", "reset_password_token", "remember_token", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at", "role") VALUES ('aaron@jailbreakcreative.com', '$2a$10$zmnZ//cI.UoPzTWMnr35vOBRDQDtWRNEDl9FePL3F9DMrMYBrbNpe', '$2a$10$zmnZ//cI.UoPzTWMnr35vO', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2010-12-21 06:53:56.444329', '2010-12-21 06:53:56.444329', 'member')[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2010-12-21 06:53:56.455185', "current_sign_in_at" = '2010-12-21 06:53:56.455185', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-12-21 06:53:56.455765' WHERE ("users"."id" = 1)
+Redirected to http://localhost:3000/
+Completed 302 Found in 316ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-21 01:53:56 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.2ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+Rendered layouts/_menu.html.erb (2.3ms)
+Rendered prayers/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 84ms (Views: 17.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+  Processing by PrayersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_prayers__form_html_erb__4242700114082069580_69988942503320_2172525355806834819 at /home/aaron/Social-Prayer-Network/app/views/prayers/_form.html.erb:2)
+Rendered prayers/_form.html.erb (34.9ms)
+Rendered layouts/_menu.html.erb (3.1ms)
+Rendered prayers/new.html.erb within layouts/application (47.4ms)
+Completed 200 OK in 181ms (Views: 53.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (73.2ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:54:01 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:54:02 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:54:02 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started POST "/prayers" for 127.0.0.1 at 2010-12-21 01:54:09 -0500
+  Processing by PrayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WYs7j9gsRhAGBCLTTUgKjfY4p+8c9m7zaxUbJBBh82Y=", "prayer"=>{"request"=>"This is my first request", "user"=>""}, "commit"=>"Create Prayer"}
+  [1m[36mUser Load (3.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: user
+WARNING: Can't mass-assign protected attributes: user
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_prayers__form_html_erb__4242700114082069580_46955500_2172525355806834819 at /home/aaron/Social-Prayer-Network/app/views/prayers/_form.html.erb:2)
+Rendered prayers/_form.html.erb (32.7ms)
+Rendered layouts/_menu.html.erb (2.6ms)
+Rendered prayers/new.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 192ms (Views: 50.1ms | ActiveRecord: 4.7ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+  [1m[36mSQL (2.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('aaron@jailbreakcreative.com')) AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE "users" SET "role" = 'admin', "updated_at" = '2010-12-21 06:55:08.130611' WHERE ("users"."id" = 1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/categories" for 127.0.0.1 at 2010-12-21 01:55:24 -0500
+  Processing by CategoriesController#index as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered layouts/_menu.html.erb (32.9ms)
+Rendered categories/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 201ms (Views: 66.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2010-12-21 01:55:27 -0500
+  Processing by CategoriesController#new as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered categories/_form.html.erb (12.7ms)
+Rendered layouts/_menu.html.erb (73.9ms)
+Rendered categories/new.html.erb within layouts/application (111.4ms)
+Completed 200 OK in 246ms (Views: 127.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/categories/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/categories/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/categories/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/categories/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/categories/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:55:28 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2010-12-21 01:55:34 -0500
+  Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WYs7j9gsRhAGBCLTTUgKjfY4p+8c9m7zaxUbJBBh82Y=", "category"=>{"name"=>"Health Issues"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ('Health Issues', '2010-12-21 06:55:34.540619', '2010-12-21 06:55:34.540619')
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 146ms
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2010-12-21 01:55:34 -0500
+  Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE ("categories"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE ("categories"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.2ms)[0m  SELECT "prayers".* FROM "prayers" WHERE ("prayers"."category_id" = 1) LIMIT 20
+Rendered layouts/_menu.html.erb (2.3ms)
+Rendered categories/show.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 158ms (Views: 22.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:55:34 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:55:34 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:55:34 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:55:34 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/categories/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:55:34 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:55:35 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/categories/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:55:35 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:55:35 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:55:35 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:55:35 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:55:35 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:55:35 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:55:35 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/categories/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:55:35 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+  Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+Rendered layouts/_menu.html.erb (21.8ms)
+Rendered categories/index.html.erb within layouts/application (91.6ms)
+Completed 200 OK in 160ms (Views: 97.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/categories/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/categories/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/categories/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.6ms)
+
+
+Started GET "/categories/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (7.5ms)
+
+
+Started GET "/categories/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/categories/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:55:42 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:55:43 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:55:43 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (69.2ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:55:43 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:55:43 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2010-12-21 01:55:46 -0500
+  Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered categories/_form.html.erb (8.9ms)
+Rendered layouts/_menu.html.erb (22.0ms)
+Rendered categories/new.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 169ms (Views: 103.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (7.5ms)
+
+
+Started GET "/categories/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/categories/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/categories/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:55:47 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2010-12-21 01:55:56 -0500
+  Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WYs7j9gsRhAGBCLTTUgKjfY4p+8c9m7zaxUbJBBh82Y=", "category"=>{"name"=>"Spiritual Issues"}, "commit"=>"Create Category"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ('Spiritual Issues', '2010-12-21 06:55:56.652714', '2010-12-21 06:55:56.652714')[0m
+Redirected to http://localhost:3000/categories/2
+Completed 302 Found in 136ms
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2010-12-21 01:55:56 -0500
+  Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE ("categories"."id" = 2) LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE ("categories"."id" = 2) LIMIT 1
+  [1m[36mPrayer Load (0.2ms)[0m  [1mSELECT "prayers".* FROM "prayers" WHERE ("prayers"."category_id" = 2) LIMIT 20[0m
+Rendered layouts/_menu.html.erb (2.6ms)
+Rendered categories/show.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 167ms (Views: 24.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:55:56 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:55:57 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:55:57 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/categories/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:55:57 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:55:57 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/categories/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:55:57 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/categories/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:55:57 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:55:57 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:55:57 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:55:57 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:55:57 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/" for 127.0.0.1 at 2010-12-21 01:56:00 -0500
+  Processing by CategoriesController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered layouts/_menu.html.erb (25.7ms)
+Rendered categories/index.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 170ms (Views: 50.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/categories/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/categories/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/categories/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/categories/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/categories/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/categories/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:56:01 -0500
+
+ActionController::RoutingError (No route matches "/categories/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.6ms)
+
+
+Started GET "/resources" for 127.0.0.1 at 2010-12-21 01:56:09 -0500
+  Processing by ResourcesController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mResource Load (0.2ms)[0m  [1mSELECT "resources".* FROM "resources"[0m
+Rendered resources/index.html.erb within layouts/application (38.1ms)
+Completed   in 164ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Thank you for submitting your prayer request</h1>
+    4: <p><%= current_user.email %>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following <%= @category.name %> resources helpful.</p>
+    5: <p>Best Regards,<br />
+    6: Aaron Mills</p>
+    7: <h2>Dealing With <%= @category.name %></h2>
+  app/views/resources/index.html.erb:4:in `_app_views_resources_index_html_erb__826710964353940252_38832200__467889913702232906'
+  app/controllers/resources_controller.rb:12:in `index'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (135.1ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (188.6ms)
+
+
+Started GET "/resources?catid=1" for 127.0.0.1 at 2010-12-21 01:56:36 -0500
+  Processing by ResourcesController#index as HTML
+  Parameters: {"catid"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE ("categories"."id" = 1) LIMIT 1[0m
+  [1m[35mResource Load (0.3ms)[0m  SELECT "resources".* FROM "resources" WHERE ("resources"."category_id" = 1) ORDER BY created_at DESC LIMIT 10 OFFSET 0
+Rendered layouts/_menu.html.erb (20.8ms)
+Rendered resources/index.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 181ms (Views: 40.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/resources/new" for 127.0.0.1 at 2010-12-21 01:56:41 -0500
+  Processing by ResourcesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_resources__form_html_erb___1812921507079163722_31452220__1687568963432686186 at /home/aaron/Social-Prayer-Network/app/views/resources/_form.html.erb:2)
+Rendered resources/_form.html.erb (99.4ms)
+Rendered layouts/_menu.html.erb (21.1ms)
+Rendered resources/new.html.erb within layouts/application (132.8ms)
+Completed 200 OK in 219ms (Views: 152.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/resources/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/resources/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.6ms)
+
+
+Started GET "/resources/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/resources/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/resources/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/resources/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/resources/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/resources/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/resources/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/resources/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/resources/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/resources/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/resources/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/resources/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:56:42 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started POST "/resources" for 127.0.0.1 at 2010-12-21 01:57:18 -0500
+  Processing by ResourcesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WYs7j9gsRhAGBCLTTUgKjfY4p+8c9m7zaxUbJBBh82Y=", "resource"=>{"title"=>"Health Resource Website Sample", "description"=>"This is a sample description", "url"=>"http://www.sample.com", "category_id"=>"1"}, "commit"=>"Create Resource"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "resources" ("title", "description", "url", "category_id", "created_at", "updated_at") VALUES ('Health Resource Website Sample', 'This is a sample description', 'http://www.sample.com', 1, '2010-12-21 06:57:18.750994', '2010-12-21 06:57:18.750994')
+Redirected to http://localhost:3000/resources/1
+Completed 302 Found in 152ms
+
+
+Started GET "/resources/1" for 127.0.0.1 at 2010-12-21 01:57:18 -0500
+  Processing by ResourcesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mResource Load (0.2ms)[0m  [1mSELECT "resources".* FROM "resources" WHERE ("resources"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "resources".* FROM "resources" WHERE ("resources"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (23.1ms)
+Rendered resources/show.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 193ms (Views: 61.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/resources/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/resources/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/resources/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/resources/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.1ms)
+
+
+Started GET "/resources/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/resources/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/resources/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/resources/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/resources/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/resources/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/resources/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/resources/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/resources/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/resources/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/resources/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/resources/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 01:57:19 -0500
+
+ActionController::RoutingError (No route matches "/resources/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/resources/" for 127.0.0.1 at 2010-12-21 01:57:24 -0500
+  Processing by ResourcesController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mResource Load (0.3ms)[0m  [1mSELECT "resources".* FROM "resources"[0m
+Rendered resources/index.html.erb within layouts/application (1.6ms)
+Completed   in 134ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Thank you for submitting your prayer request</h1>
+    4: <p><%= current_user.email %>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following <%= @category.name %> resources helpful.</p>
+    5: <p>Best Regards,<br />
+    6: Aaron Mills</p>
+    7: <h2>Dealing With <%= @category.name %></h2>
+  app/views/resources/index.html.erb:4:in `_app_views_resources_index_html_erb__826710964353940252_32779020__467889913702232906'
+  app/controllers/resources_controller.rb:12:in `index'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (192.5ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (200.6ms)
+
+
+Started GET "/resources/" for 127.0.0.1 at 2010-12-21 01:58:56 -0500
+  Processing by ResourcesController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mResource Load (0.3ms)[0m  [1mSELECT "resources".* FROM "resources"[0m
+Rendered resources/index.html.erb within layouts/application (1.8ms)
+Completed   in 131ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Thank you for submitting your prayer request</h1>
+    4: <p><%= current_user.email %>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following <%= @category.name %> resources helpful.</p>
+    5: <p>Best Regards,<br />
+    6: Aaron Mills</p>
+    7: <% if @category %>
+  app/views/resources/index.html.erb:4:in `_app_views_resources_index_html_erb__826710964353940252_32811640__467889913702232906'
+  app/controllers/resources_controller.rb:12:in `index'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (201.0ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (209.2ms)
+
+
+Started GET "/resources/" for 127.0.0.1 at 2010-12-21 01:59:27 -0500
+  Processing by ResourcesController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mResource Load (0.3ms)[0m  [1mSELECT "resources".* FROM "resources"[0m
+Rendered resources/index.html.erb within layouts/application (1.8ms)
+Completed   in 126ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Thank you for submitting your prayer request</h1>
+    4: <p><%= current_user.email %>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following <%= @category.name %> resources helpful.</p>
+    5: <p>Best Regards,<br />
+    6: Aaron Mills</p>
+    7: <% unless @category == nil  %>
+  app/views/resources/index.html.erb:4:in `_app_views_resources_index_html_erb__826710964353940252_38358200__467889913702232906'
+  app/controllers/resources_controller.rb:12:in `index'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (200.8ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (208.4ms)
+
+
+Started GET "/resources/" for 127.0.0.1 at 2010-12-21 01:59:32 -0500
+  Processing by ResourcesController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mResource Load (0.3ms)[0m  [1mSELECT "resources".* FROM "resources"[0m
+Rendered resources/index.html.erb within layouts/application (1.7ms)
+Completed   in 128ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Thank you for submitting your prayer request</h1>
+    4: <p><%= current_user.email %>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following <%= @category.name %> resources helpful.</p>
+    5: <p>Best Regards,<br />
+    6: Aaron Mills</p>
+    7: <% unless @category == nil?  %>
+  app/views/resources/index.html.erb:4:in `_app_views_resources_index_html_erb__826710964353940252_38381620__467889913702232906'
+  app/controllers/resources_controller.rb:12:in `index'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (191.9ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (199.4ms)
+
+
+Started GET "/resources/" for 127.0.0.1 at 2010-12-21 01:59:52 -0500
+  Processing by ResourcesController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mResource Load (0.3ms)[0m  [1mSELECT "resources".* FROM "resources"[0m
+Rendered resources/index.html.erb within layouts/application (1.7ms)
+Completed   in 126ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Thank you for submitting your prayer request</h1>
+    4: <p><%= current_user.email %>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following <%= @category.name %> resources helpful.</p>
+    5: <p>Best Regards,<br />
+    6: Aaron Mills</p>
+    7: <% unless @category.name == nil?  %>
+  app/views/resources/index.html.erb:4:in `_app_views_resources_index_html_erb__826710964353940252_38533460__467889913702232906'
+  app/controllers/resources_controller.rb:12:in `index'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (199.8ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (207.4ms)
+
+
+Started GET "/resources/" for 127.0.0.1 at 2010-12-21 02:00:02 -0500
+  Processing by ResourcesController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mResource Load (0.3ms)[0m  [1mSELECT "resources".* FROM "resources"[0m
+Rendered resources/index.html.erb within layouts/application (2.0ms)
+Completed   in 136ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Thank you for submitting your prayer request</h1>
+    4: <p><%= current_user.email %>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following <%= @category.name %> resources helpful.</p>
+    5: <p>Best Regards,<br />
+    6: Aaron Mills</p>
+    7: <% unless @category.id == nil?  %>
+  app/views/resources/index.html.erb:4:in `_app_views_resources_index_html_erb__826710964353940252_38782040__467889913702232906'
+  app/controllers/resources_controller.rb:12:in `index'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (147.7ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (202.5ms)
+
+
+Started GET "/resources/" for 127.0.0.1 at 2010-12-21 02:00:08 -0500
+  Processing by ResourcesController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mResource Load (0.4ms)[0m  [1mSELECT "resources".* FROM "resources"[0m
+Rendered resources/index.html.erb within layouts/application (1.7ms)
+Completed   in 75ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <h1>Thank you for submitting your prayer request</h1>
+    4: <p><%= current_user.email %>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following <%= @category.name %> resources helpful.</p>
+    5: <p>Best Regards,<br />
+    6: Aaron Mills</p>
+    7: <% unless @category.id == nill?  %>
+  app/views/resources/index.html.erb:4:in `_app_views_resources_index_html_erb__826710964353940252_31435240__467889913702232906'
+  app/controllers/resources_controller.rb:12:in `index'
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (206.9ms)
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (214.6ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-21 02:00:29 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mPrayer Load (0.3ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendered layouts/_menu.html.erb (3.1ms)
+Rendered prayers/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 139ms (Views: 17.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-21 02:00:35 -0500
+  Processing by PrayersController#new as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_prayers__form_html_erb__4393362255019511128_31484220__1687568963432686186 at /home/aaron/Social-Prayer-Network/app/views/prayers/_form.html.erb:2)
+Rendered prayers/_form.html.erb (101.7ms)
+Rendered layouts/_menu.html.erb (3.4ms)
+Rendered prayers/new.html.erb within layouts/application (114.5ms)
+Completed 200 OK in 187ms (Views: 119.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 02:00:35 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 02:00:35 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.6ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 02:00:35 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.8ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 02:00:35 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 02:00:35 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 02:00:35 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 02:00:35 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.6ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 02:00:35 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 02:00:35 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.8ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 02:00:36 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.7ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 02:00:36 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 02:00:36 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 02:00:36 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.9ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 02:00:36 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 02:00:36 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 02:00:36 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 02:00:36 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 02:00:36 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started POST "/prayers" for 127.0.0.1 at 2010-12-21 02:00:46 -0500
+  Processing by PrayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WYs7j9gsRhAGBCLTTUgKjfY4p+8c9m7zaxUbJBBh82Y=", "prayer"=>{"request"=>"This is my first request", "category_id"=>"1", "user"=>""}, "commit"=>"Create Prayer"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: user
+WARNING: Can't mass-assign protected attributes: user
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "prayers" ("request", "category_id", "user_id", "created_at", "updated_at") VALUES ('This is my first request', 1, 1, '2010-12-21 07:00:46.611993', '2010-12-21 07:00:46.611993')[0m
+Redirected to http://localhost:3000/resources?catid=1
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE ("categories"."id" = 1) LIMIT 1
+Rendered prayer_mailer/prayer_confirmation.text.erb (1.2ms)
+
+Sent mail to aaron@jailbreakcreative.com (12164ms)
+Date: Tue, 21 Dec 2010 02:00:46 -0500
+From: prayers@socialprayernetwork.com
+To: aaron@jailbreakcreative.com
+Message-ID: <4d10509ee2e31_2701e6e6f479968@ubuntu.mail>
+Subject: Your Health Issues Prayer Request
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Thank you for submitting your prayer request about Health Issues!
+
+Here is a copy of what you sent:
+
+This is my first request
+
+You can edit your request online at: http://localhost:3000/prayers/1
+
+Completed 302 Found in 12503ms
+
+
+Started GET "/resources?catid=1" for 127.0.0.1 at 2010-12-21 02:00:59 -0500
+  Processing by ResourcesController#index as HTML
+  Parameters: {"catid"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE ("categories"."id" = 1) LIMIT 1
+  [1m[36mResource Load (0.3ms)[0m  [1mSELECT "resources".* FROM "resources" WHERE ("resources"."category_id" = 1) ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendered layouts/_menu.html.erb (22.2ms)
+Rendered resources/index.html.erb within layouts/application (104.5ms)
+Completed 200 OK in 203ms (Views: 110.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-21 02:01:02 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mPrayer Load (0.3ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_menu.html.erb (2.6ms)
+Rendered prayers/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 166ms (Views: 34.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-21 02:02:14 -0500
+  Processing by PrayersController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_prayers__form_html_erb__4393362255019511128_31499500__1687568963432686186 at /home/aaron/Social-Prayer-Network/app/views/prayers/_form.html.erb:2)
+Rendered prayers/_form.html.erb (103.4ms)
+Rendered layouts/_menu.html.erb (2.3ms)
+Rendered prayers/new.html.erb within layouts/application (116.0ms)
+Completed 200 OK in 189ms (Views: 121.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.1ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 02:02:15 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2010-12-21 02:02:20 -0500
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users"
+Rendered layouts/_menu.html.erb (81.9ms)
+Rendered users/index.html.erb within layouts/application (91.2ms)
+Completed 200 OK in 154ms (Views: 97.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2010-12-21 02:02:24 -0500
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 109ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-21 02:02:24 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mPrayer Load (0.4ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mUser Load (5.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.8ms)
+Rendered prayers/index.html.erb within layouts/application (96.2ms)
+Completed 200 OK in 169ms (Views: 96.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-12-21 02:02:26 -0500
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.2ms)
+Rendered layouts/_menu.html.erb (28.2ms)
+Rendered devise/registrations/new.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 148ms (Views: 66.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/users/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/users/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/users/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/users/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/users/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/users/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/users/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/users/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/users/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/users/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/users/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/users/images/timthumb.jpg" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/users/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/users/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-21 02:02:27 -0500
+
+ActionController::RoutingError (No route matches "/users/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
