@@ -32,6 +32,9 @@ class PrayersController < ApplicationController
       if @prayer.save
         
 	redirect_to :controller => 'resources', :catid => @prayer.category_id
+	@mycategory = @prayer.category
+	
+	PrayerMailer.prayer_confirmation(@prayer, @mycategory, current_user).deliver
 
       else
         render :action => "new"

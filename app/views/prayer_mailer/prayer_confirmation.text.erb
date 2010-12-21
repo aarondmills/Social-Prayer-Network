@@ -1,0 +1,8 @@
+Thank you for submitting your prayer request about <%= @category.name %>!
+
+Here is a copy of what you sent:
+
+<%= @prayer.request %>
+
+You can edit your request online at: <%= prayer_url(@prayer, :host => "localhost:3000") %>
+
