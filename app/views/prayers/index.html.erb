@@ -10,15 +10,13 @@
   </tr>
 
 <% @prayers.each do |prayer| %>
-  <tr>
-    <td><%= prayer.request %></td>
-    <td><%= link_to 'Read', prayer %></td>
-    <% if can? :update, @prayer %>
-    <td><%= link_to 'Edit', edit_prayer_path(prayer) %></td>
-    <td><%= link_to 'Destroy', prayer, :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
+<p style="border:1px solid #ccc;padding:8px;"><img src="<%= avatar_url(prayer.user) %>" style="float:left;margin-right:10px;margin-bottom:10px;" /><%= prayer.request %>
+    <% if can? :update, @prayer %><br />
+    <%= link_to 'Edit', edit_prayer_path(prayer) %> | 
+    <%= link_to 'Destroy', prayer, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %> <br style="clear:both;" /></p>
 
-  </tr>
+  
 <% end %>
 </table>
 <br />

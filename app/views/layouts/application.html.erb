@@ -56,7 +56,7 @@
     
     </div>
     <div class="sidebar">
-    <% if user_signed_in? %><p>Signed in as <%= current_user.email %></p><% end %>
+    <% if user_signed_in? %><p><img src="<%= avatar_url(current_user) %>" style="float:left;margin-right:10px;margin-bottom:10px;" />Signed in as <%= current_user.email %></p><% end %>
     
  
       <div class="sidebar-box">
