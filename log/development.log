@@ -68484,3 +68484,602 @@ Rendered layouts/_menu.html.erb (2.8ms)
   [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)[0m
 Rendered prayers/index.html.erb within layouts/application (38.2ms)
 Completed 200 OK in 192ms (Views: 43.2ms | ActiveRecord: 2.2ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from mon_synchronize at /home/aaron/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/monitor.rb:201)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/user/1/edit" for 127.0.0.1 at 2010-12-22 18:09:05 -0500
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Completed   in 152ms
+
+ActionView::MissingTemplate (Missing template users/edit with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/aaron/Social-Prayer-Network/app/views", "/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/flutie-1.0.3/app/views", "/home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/devise-1.1.5/app/views"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.1ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+  [1m[36mSQL (2.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('aaron@jailbreakcreative.com')) AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mAREL (0.7ms)[0m  UPDATE "users" SET "firstname" = 'Aaron', "lastname" = 'Mills', "location" = 'Lynchburg', "updated_at" = '2010-12-22 23:10:15.522727' WHERE ("users"."id" = 1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/aaron/Social-Prayer-Network/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:11:35 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (3.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mPrayer Load (0.3ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.2ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 197ms (Views: 41.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:11:56 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.4ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_menu.html.erb (2.6ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)[0m
+Rendered prayers/index.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 178ms (Views: 42.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:12:08 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mPrayer Load (0.4ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.5ms)
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (88.2ms)
+Completed 200 OK in 178ms (Views: 94.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:12:31 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.3ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_menu.html.erb (2.9ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)[0m
+Rendered prayers/index.html.erb within layouts/application (93.9ms)
+Completed 200 OK in 176ms (Views: 99.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:13:01 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mPrayer Load (0.4ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.8ms)
+  [1m[35mSQL (3.6ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (95.2ms)
+Completed 200 OK in 238ms (Views: 97.9ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:13:28 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.4ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_menu.html.erb (2.4ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)[0m
+Rendered prayers/index.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 178ms (Views: 42.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:13:42 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mPrayer Load (0.4ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.9ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 185ms (Views: 41.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:14:13 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (58.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.4ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_menu.html.erb (2.3ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)[0m
+Rendered prayers/index.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 186ms (Views: 41.8ms | ActiveRecord: 59.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:14:35 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mPrayer Load (0.3ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.2ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 169ms (Views: 40.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:14:44 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.3ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_menu.html.erb (2.3ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)[0m
+Rendered prayers/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 182ms (Views: 43.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:14:53 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mPrayer Load (0.4ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.3ms)
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (90.8ms)
+Completed 200 OK in 176ms (Views: 96.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:15:02 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.3ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_menu.html.erb (2.4ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)[0m
+Rendered prayers/index.html.erb within layouts/application (94.4ms)
+Completed 200 OK in 234ms (Views: 100.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 18:15:11 -0500
+  Processing by PrayersController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mPrayer Load (0.3ms)[0m  [1mSELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.8ms)
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 184ms (Views: 42.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/prayers/new" for 127.0.0.1 at 2010-12-22 18:15:19 -0500
+  Processing by PrayersController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_prayers__form_html_erb__4286203071231122726_39617280_672412670853890232 at /home/aaron/Social-Prayer-Network/app/views/prayers/_form.html.erb:2)
+Rendered prayers/_form.html.erb (40.2ms)
+Rendered layouts/_menu.html.erb (2.7ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)[0m
+Rendered prayers/new.html.erb within layouts/application (113.7ms)
+Completed 200 OK in 248ms (Views: 119.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/prayers/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/prayers/images/timthumb.jpg" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/prayers/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-22 18:15:20 -0500
+
+ActionController::RoutingError (No route matches "/prayers/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started POST "/prayers" for 127.0.0.1 at 2010-12-22 18:15:41 -0500
+  Processing by PrayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"34kxmOSbH6I3m6lQMC1SH0uOxwGAuSN+bfPBdkuO4zI=", "prayer"=>{"request"=>"This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. ", "category_id"=>"1", "user"=>""}, "commit"=>"Create Prayer"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: user
+WARNING: Can't mass-assign protected attributes: user
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "prayers" ("request", "category_id", "user_id", "created_at", "updated_at") VALUES ('This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. ', 1, 1, '2010-12-22 23:15:41.888520', '2010-12-22 23:15:41.888520')[0m
+Redirected to http://localhost:3000/resources?catid=1
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE ("categories"."id" = 1) LIMIT 1
+Rendered prayer_mailer/prayer_confirmation.text.erb (1.1ms)
+
+Sent mail to aaron@jailbreakcreative.com (7190ms)
+Date: Wed, 22 Dec 2010 18:15:42 -0500
+From: prayers@socialprayernetwork.com
+To: aaron@jailbreakcreative.com
+Message-ID: <4d12869e2f9c2_49c9252ac68753@ubuntu.mail>
+Subject: Your Health Issues Prayer Request
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Thank you for submitting your prayer request about Health Issues!
+
+Here is a copy of what you sent:
+
+This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. This is a much lo.nger request. This is how it looks. 
+
+You can edit your request online at: http://localhost:3000/prayers/5
+
+Completed 302 Found in 7540ms
+
+
+Started GET "/resources?catid=1" for 127.0.0.1 at 2010-12-22 18:15:49 -0500
+  Processing by ResourcesController#index as HTML
+  Parameters: {"catid"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE ("categories"."id" = 1) LIMIT 1
+  [1m[36mResource Load (0.3ms)[0m  [1mSELECT "resources".* FROM "resources" WHERE ("resources"."category_id" = 1) ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendered layouts/_menu.html.erb (73.2ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered resources/index.html.erb within layouts/application (108.4ms)
+Completed 200 OK in 259ms (Views: 113.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-22 18:15:54 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.4ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.2ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 169ms (Views: 41.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-22 18:16:09 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.4ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.8ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 179ms (Views: 44.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-22 18:16:28 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.4ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.2ms)
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 174ms (Views: 43.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-22 18:17:01 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.4ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.4ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (93.6ms)
+Completed 200 OK in 186ms (Views: 98.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-22 18:17:19 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.4ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.8ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (94.4ms)
+Completed 200 OK in 243ms (Views: 99.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-22 18:17:29 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.9ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.6ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 185ms (Views: 43.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-22 18:17:47 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.4ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.2ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 187ms (Views: 43.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/prayers" for 127.0.0.1 at 2010-12-22 18:17:59 -0500
+  Processing by PrayersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPrayer Load (0.5ms)[0m  SELECT "prayers".* FROM "prayers" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.8ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/index.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 177ms (Views: 42.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/prayers/4/edit" for 127.0.0.1 at 2010-12-22 18:18:38 -0500
+  Processing by PrayersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPrayer Load (0.3ms)[0m  [1mSELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 4) LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "prayers".* FROM "prayers" WHERE ("prayers"."id" = 4) LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_prayers__form_html_erb__4286203071231122726_45930600_672412670853890232 at /home/aaron/Social-Prayer-Network/app/views/prayers/_form.html.erb:2)
+Rendered prayers/_form.html.erb (42.4ms)
+Rendered layouts/_menu.html.erb (2.5ms)
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "prayers" WHERE ("prayers".user_id = 1)
+Rendered prayers/edit.html.erb within layouts/application (70.3ms)
+Completed 200 OK in 204ms (Views: 75.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/prayers/4/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/prayers/4/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/4/images/icons/flickr_32.png" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/icons/flickr_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/prayers/4/images/icons/twitter_32.png" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/icons/twitter_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/prayers/4/images/icons/rss_32.png" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/icons/rss_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/prayers/4/images/timthumb.jpg" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/timthumb.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/prayers/4/images/timthumb2.jpg" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/timthumb2.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/prayers/4/images/timthumb3.jpg" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/timthumb3.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.7ms)
+
+
+Started GET "/prayers/4/images/timthumb4.jpg" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/timthumb4.jpg"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.6ms)
+
+
+Started GET "/prayers/4/images/icons/delicious_32.png" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/icons/delicious_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/prayers/4/images/icons/facebook_32.png" for 127.0.0.1 at 2010-12-22 18:18:39 -0500
+
+ActionController::RoutingError (No route matches "/prayers/4/images/icons/facebook_32.png"):
+  
+
+Rendered /home/aaron/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
