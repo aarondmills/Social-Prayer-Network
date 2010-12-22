@@ -1930,9 +1930,10 @@ left:0px;
 /*------------- CONTACT PAGE --------------*/
 
 input {
-	width: 150px;
+	width: 300px;
 	height: 35px;
-	border: 1px solid #eee;
+	border: 1px solid #ccc;
+	padding: 5px;
 	
 	padding-top: 2px;
 	padding-bottom: 2px;
@@ -1955,6 +1956,20 @@ textarea {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
+}
+
+.nice-fieldset {
+	border:1px solid #ccc;
+	padding:20px;
+	background: #eee;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.nice-legend {
+	margin:10px;
+	font-size:20px;
 }
 
 #submit_form{
@@ -2097,4 +2112,11 @@ height:268px;
 }
 
 
+.micropost {
+	border:1px solid #ccc;
+	padding:8px;
+}
 
+.timestamp {
+	border-top:1px solid #eee;
+}

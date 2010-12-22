@@ -10,11 +10,13 @@
   </tr>
 
 <% @prayers.each do |prayer| %>
-<p style="border:1px solid #ccc;padding:8px;"><img src="<%= avatar_url(prayer.user) %>" style="float:left;margin-right:10px;margin-bottom:10px;" /><%= prayer.request %>
-    <% if user_signed_in? %><% if current_user.id == prayer.user.id %><br />
+<p class="micropost"><img src="<%= avatar_url(prayer.user) %>" style="float:left;margin-right:10px;margin-bottom:10px;" /><%= prayer.request %><br />
+<em><span class="timestamp">Posted <%= time_ago_in_words(prayer.created_at) %> ago.</span></em> <br style="clear:both;" /></p>
+
+    <% if user_signed_in? %><% if current_user.id == prayer.user.id %><p>
     <%= link_to 'Edit This Request', edit_prayer_path(prayer) %>
     
-    <% end %><% end %> <br style="clear:both;" /></p>
+    <% end %><% end %> </p>
 
   
 <% end %>
