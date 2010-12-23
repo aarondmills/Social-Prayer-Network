@@ -471,8 +471,8 @@ body {
 }
 
 #logo-container a {
-	width: 278px;
-	height: 85px;
+	width: 600px;
+	height: 150px;
 	display: block;
 	background-image: url(../images/logo.png);
 	background-repeat: no-repeat;
