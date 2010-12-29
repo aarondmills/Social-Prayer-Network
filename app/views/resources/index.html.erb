@@ -1,13 +1,14 @@
-<p id="notice"><%= notice %></p>
+<% @page_title = "Thank You For Sharing" %>
+<% @page_tagline = "Below are some resources for dealing with #{@category.name}" %>
 
-<h1>Thank you for submitting your prayer request</h1>
-<p><%= current_user.email %>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following <%= @category.name %> resources helpful.</p>
+<p><strong><%= current_user.firstname %></strong>, People from around the world will see and pray for your request. Even now someone is likely already praying for you this very moment. We hope you find the following resources for <%= @category.name %>.</p>
 <p>Best Regards,<br />
 Aaron Mills</p>
-<h2>Dealing With <%= @category.name %></h2>
+<br />
+<h2 style="border-bottom:1px solid;">Dealing With <%= @category.name %></h2>
 
 <% if can? :update, Category%>
-<%= link_to 'Edit This Category Name', edit_category_path(@category) %>
+<p style="float:right;"><%= link_to 'Edit This Category Name', edit_category_path(@category), :class => 'button' %></p><br /><br />
 <% end %>
 
 
@@ -25,5 +26,5 @@ Aaron Mills</p>
 <br />
 
 <% if can? :create, Resource %>
-<%= link_to 'New Resource', new_resource_path %>
+<p style="float:right;"><%= link_to 'Create a new resource', new_resource_path, :class => 'button' %></p>
 <% end %>

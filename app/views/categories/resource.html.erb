@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Dealing With <%= @category.name %></h1>
+<% @page_title = "Dealing with #{@category.name}" %>
+<% @page_tagline = "Thank you" %>
 
 <% if can? :update, Category%>
 <%= link_to 'Edit This Category Name', edit_category_path(@category) %>

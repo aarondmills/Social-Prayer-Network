@@ -17,7 +17,7 @@
 			default_width: 500,
 			default_height: 344,
 			counter_separator_label: '/', /* The separator for the gallery counter 1 "of" 2 */
-			theme: 'light_rounded', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+			theme: 'facebook', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
 			hideflash: false, /* Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto */
 			wmode: 'opaque', /* Set the flash wmode attribute */
 			autoplay: true, /* Automatically start videos: True/False */
@@ -95,10 +95,6 @@
 
 		// Global elements
 		scrollPos = _getScroll();
-		
-		if(!$ppt) $ppt = $('.ppt');
-		if(!$pp_pic_holder) $pp_pic_holder = $('.pp_pic_holder');
-		if(!$pp_overlay) $pp_overlay = $('div.pp_overlay');
 	
 		// Window/Keyboard events
 		$(window).scroll(function(){ scrollPos = _getScroll(); _centerOverlay(); _resizeOverlay(); });

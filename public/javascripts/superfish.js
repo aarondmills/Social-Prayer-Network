@@ -15,7 +15,7 @@
 
 		var sf = $.fn.superfish,
 			c = sf.c,
-			$arrow = $(['<div class="',c.arrowClass,'"> &#187; </div>'].join('')),
+			$arrow = $(['<span class="',c.arrowClass,'"> &#187;</span>'].join('')),
 			over = function(){
 				var $$ = $(this), menu = getMenu($$);
 				clearTimeout(menu.sfTimer);
@@ -85,37 +85,26 @@
 		hoverClass	: 'sfHover',
 		pathClass	: 'overideThisToUse',
 		pathLevels	: 1,
-		delay		: 30,
-		animation	: {height:'show'},
-		speed		: 200,
-		autoArrows	: true,
-		dropShadows : true,
-		disableHI	: true,		// true disables hoverIntent detection
+		delay		: 800,
+		animationOpen : {opacity:'show'}, 
+		animationClose : {opacity:'hide'},
+		speed		: 300,
+		autoArrows	: false,
+		dropShadows : false,
+		disableHI	: false,		// true disables hoverIntent detection
 		onInit		: function(){}, // callback functions
 		onBeforeShow: function(){},
 		onShow		: function(){},
 		onHide		: function(){}
 	};
 	$.fn.extend({
-		hideSuperfishUl : function(){
-			var o = sf.op,
-				not = (o.retainPath===true) ? o.$path : '';
-			o.retainPath = false;
-			var $ul = $(['li.',o.hoverClass].join(''),this).add(this).not(not).removeClass(o.hoverClass)
-					.find('>ul').hide().css('visibility','hidden');
-			o.onHide.call($ul);
-			return this;
-		},
-		showSuperfishUl : function(){
-			var o = sf.op,
-				sh = sf.c.shadowClass+'-off',
-				$ul = this.addClass(o.hoverClass)
-					.find('>ul:hidden').css('visibility','visible');
-			sf.IE7fix.call($ul);
-			o.onBeforeShow.call($ul);
-			$ul.animate(o.animation,o.speed,function(){ sf.IE7fix.call($ul); o.onShow.call($ul); });
-			return this;
+		hideSuperfishUl : function(){ var o = $.fn.superfish.op, $ul = $('li.'+o.hoverClass,this).add(this); $ul.find('>ul').animate(o.animationClose, o.speed, function() { $(this).css('visibility','hidden'); $ul.removeClass(o.hoverClass); o.onBeforeShow.call($ul); }); return this; }, showSuperfishUl : function(){ var o = $.fn.superfish.op, $ul = this.addClass(o.hoverClass) .find('>ul:hidden').css('visibility','visible'); o.onBeforeShow.call($ul); $ul.animate(o.animationOpen,o.speed,o.easing,function(){ o.onShow.call(this); }); return this; 
 		}
 	});
+
+	$(document).ready(function() {
+		$(".sf-menu li li a").css("paddingLeft","10px");
+	});
+
 
 })(jQuery);

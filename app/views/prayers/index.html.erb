@@ -1,30 +1,32 @@
 <% @page_title = "Prayer Requests" %>
-<h1>Latest Prayer Requests</h1>
+<% @page_tagline = "Latest prayer requests from the social prayer network" %>
 
-<table>
-  <tr>
-    <th>Request</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
+
 
 <% @prayers.each do |prayer| %>
-<p class="micropost"><img src="<%= avatar_url(prayer.user) %>" style="float:left;margin-right:10px;margin-bottom:10px;" /><%= prayer.request %><br />
-<span class="timestamp">Posted <%= time_ago_in_words(prayer.created_at) %> ago, by <strong><%= prayer.user.firstname %> <%= prayer.user.lastname %></strong> in <%= prayer.user.location %></span><br style="clear:both;" /></p>
-
-    <% if user_signed_in? %><% if current_user.id == prayer.user.id %><p>
-    <%= link_to 'Edit This Request', edit_prayer_path(prayer) %>
+    <div class="post">
+          <div class="meta">
+            <span class="category">Category: <a href="#"><%= prayer.category.name %></a></span>
+            <span class="date">Posted <%= time_ago_in_words(prayer.created_at) %> ago, by <%= prayer.user.firstname %> <%= prayer.user.lastname %> in <%= prayer.user.location %></span>
+          </div>
+	  <a href="#" class="img-load"><img src="<%= avatar_url(prayer.user) %>" class="lightview" width="80px" /></a>
+          <%= prayer.request %>
+    <% if user_signed_in? %><% if current_user.id == prayer.user.id %><p style="float:right;"><br />
+    <%= link_to 'Edit This Request', edit_prayer_path(prayer), :class => 'button' %></p>
     
-    <% end %><% end %> </p>
+    <% end %><% end %> 
+
+    </div>
 
   
 <% end %>
-</table>
-<br />
-<hr />
+<br  style="clear:both;" />
 <%= will_paginate @prayers %>
 
-<br />
 
-<% if can? :create, Prayer %><%= link_to 'New Prayer', new_prayer_path %><% end %>
+<br  style="clear:both;" />
+<% if can? :create, Prayer %><p style="float:right;"><%= link_to 'New Request', new_prayer_path, :class => 'button' %></p>
+<% else %>
+<p style="float:right;">Ready to share your own request? <%= link_to "Register", new_user_registration_path %> | <%= link_to "Sign-In", new_user_session_path %></p>
+<% end %>

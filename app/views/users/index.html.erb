@@ -1,20 +1,27 @@
-<% @page_title = "Members of the Social Prayer Network" %>
+<% @page_title = "Members" %>
+<% @page_tagline = "Connect with other members of the prayer network" %>
 
 <% if can? :manage, @users %>
   <p>Hello, you are an Admin</p>
   <h2>Members of the Social Prayer Network</h2>
-  
-<% else %>
-  <p>Hello, you are logged in as <%= current_user.email %></p>
+  <% @users.each do |user| %>
+    <p><%= image_tag avatar_url(user) %>
+<%= user.firstname %></p>
 <% end %>
+<% elsif user_signed_in? %>
+  <p>Hello, you are logged in as <%= current_user.email %></p>
+
 <% @users.each do |user| %>
     <p><%= image_tag avatar_url(user) %>
-<%= user.email %></p>
-  
+<%= user.firstname %></p>
+<% end %>
+<% else %>
+<h2>This page is only available to members</h2>
+<p>Ready to share your own requests or pray for others? <%= link_to "Register", new_user_registration_path %> | <%= link_to "Sign-In", new_user_session_path %></	p>
 <% end %>
 
 <br />
 <hr />
-<%= will_paginate @prayers %>
+<%= will_paginate @users %>
 <br />
 
