@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
-gem 'devise'
+gem "devise", "1.2.rc"
 gem 'flutie', '1.0.3'
 gem 'capybara'
 gem 'database_cleaner'
@@ -12,7 +12,7 @@ gem 'spork'
 gem 'launchy' 
 gem 'formtastic', '~> 1.1.0'
 gem 'cancan' 
-gem 'omniauth'
+gem "oa-oauth", :require => "omniauth/oauth"
 gem "will_paginate", "~> 3.0.pre2"
 gem 'gravtastic'
 

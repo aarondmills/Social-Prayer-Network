@@ -5,7 +5,7 @@ Spn::Application.routes.draw do
 
   resources :categories
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
    get '/logout' => 'devise/sessions#destroy'
@@ -15,6 +15,9 @@ Spn::Application.routes.draw do
   resources :user, :controller => "users"
 
   match 'members/' => 'users#index'
+
+
+
 
 
   # The priority is based upon order of creation:
