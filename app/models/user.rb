@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 10
 
-a
+  def self.find_for_facebook_oauth(access_token, signed_in_resource=nil) p
     data = access_token['extra']['user_hash']
     if user = User.find_by_email(data["email"])
       user
