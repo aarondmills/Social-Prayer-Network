@@ -1,0 +1,16 @@
+<% @page_title = "Cellphone Number" %>
+<% @page_tagline = "What cellphone will you use to send us prayer requests via sms?" %>
+
+<%= form_for(@cellphone) do |f| %>
+  
+  <div class="field">
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', cellphones_path %>

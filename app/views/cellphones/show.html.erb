@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Number:</b>
+  <%= @cellphone.number %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @cellphone.active %>
+</p>
+
+<p>
+  <b>Token:</b>
+  <%= @cellphone.token %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @cellphone.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_cellphone_path(@cellphone) %> |
+<%= link_to 'Back', cellphones_path %>

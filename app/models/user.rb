@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role, :firstname, :lastname, :location, :avatar
 
   has_many :prayers, :dependent => :destroy
+  has_one :cellphone, :dependent => :destroy
   
   def self.new_with_session(params, session)
     super.tap do |user|

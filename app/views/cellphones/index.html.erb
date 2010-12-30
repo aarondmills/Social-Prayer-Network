@@ -1,0 +1,29 @@
+<h1>Listing cellphones</h1>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Active</th>
+    <th>Token</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cellphones.each do |cellphone| %>
+  <tr>
+    <td><%= cellphone.number %></td>
+    <td><%= cellphone.active %></td>
+    <td><%= cellphone.token %></td>
+    <td><%= cellphone.user_id %></td>
+    <td><%= link_to 'Show', cellphone %></td>
+    <td><%= link_to 'Edit', edit_cellphone_path(cellphone) %></td>
+    <td><%= link_to 'Destroy', cellphone, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cellphone', new_cellphone_path %>

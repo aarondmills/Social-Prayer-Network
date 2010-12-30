@@ -1,4 +1,6 @@
 Spn::Application.routes.draw do
+  resources :cellphones
+
   resources :resources
 
   resources :prayers
