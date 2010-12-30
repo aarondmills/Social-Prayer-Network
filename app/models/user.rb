@@ -18,10 +18,7 @@ class User < ActiveRecord::Base
         user.email = data["email"]
 	user.firstname = data["first_name"]
 	user.lastname = data["last_name"]
-	location = data["location"].to_s
-	location["name"] = ""
-	location[/id[0-9]re*$/] = ""
-	user.location = location
+	user.location = data["location"]
       end
     end
   end
