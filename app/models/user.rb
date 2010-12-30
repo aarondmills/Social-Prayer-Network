@@ -18,7 +18,10 @@ class User < ActiveRecord::Base
         user.email = data["email"]
 	user.firstname = data["first_name"]
 	user.lastname = data["last_name"]
-	user.location = data["location"]
+	location = data["location"].to_s
+	location["name"] = ""
+	location[/id[0-9]re*$/] = ""
+	user.location = location
       end
     end
   end
@@ -33,7 +36,7 @@ class User < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 10
 
-  def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
+a
     data = access_token['extra']['user_hash']
     if user = User.find_by_email(data["email"])
       user
