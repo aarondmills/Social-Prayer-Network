@@ -14,10 +14,10 @@ class CellphonesController < ApplicationController
   # GET /cellphones/1.xml
   def show
     @cellphone = Cellphone.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @cellphone }
+    if params[:code] == @cellphone.token
+      @cellphone.active = "true"
+      @cellphone.save
+      redirect_to(prayers_path, :notice => 'Your cell phone has been varified')
     end
   end
 
@@ -41,11 +41,7 @@ class CellphonesController < ApplicationController
   # POST /cellphones
   # POST /cellphones.xml
   def create
-    @cellphone = Cellphone.new(params[:cellphone])
-
-    @cellphone.token = "12345"
-    @cellphone.active = "false"
-    @cellphone.user_id = current_user
+    @cellphone = current_user.build_cellphone(:token => "12345", :active => "false", :number => params[:number])
 
       if @cellphone.save
         redirect_to(@cellphone, :notice => 'Please enter your varification code')
@@ -64,22 +60,20 @@ class CellphonesController < ApplicationController
       if @cellphone.update_attributes(params[:cellphone])
         format.html { redirect_to(@cellphone, :notice => 'Cellphone was successfully updated.') }
         format.xml  { head :ok }
-      else
+      else	
         format.html { render :action => "edit" }
         format.xml  { render :xml => @cellphone.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /cellphones/1
-  # DELETE /cellphones/1.xml
+
   def destroy
     @cellphone = Cellphone.find(params[:id])
     @cellphone.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(cellphones_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(cellphones_url) 
+
+
   end
 end
