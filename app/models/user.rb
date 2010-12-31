@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
         user.email = data["email"]
 	user.firstname = data["first_name"]
 	user.lastname = data["last_name"]
-	user_location = data["location"]
+	user_location = data["location"].to_s
 	user_location.gsub!('name', '')
 	user_location.gsub!(/id[0-9]/, '').gsub!(/[0-9]/, '')
 	user.location = user_location
