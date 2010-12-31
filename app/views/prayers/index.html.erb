@@ -9,7 +9,7 @@
     <div class="post">
           <div class="meta">
             <span class="category">Category: <a href="#"><%= prayer.category.name %></a></span>
-            <span class="date">Posted <%= time_ago_in_words(prayer.created_at) %> ago, by <%= prayer.user.firstname %> <%= prayer.user.lastname %> in <%= prayer.user.location %></span>
+            <span class="date">Posted <%= time_ago_in_words(prayer.created_at) %> ago, by <%= prayer.user.firstname %> <%= prayer.user.lastname %></span>
           </div>
 	  <a href="#" class="img-load"><img src="<%= avatar_url(prayer.user) %>" class="lightview" width="80px" /></a>
           <%= prayer.request %>
