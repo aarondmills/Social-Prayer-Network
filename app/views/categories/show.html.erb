@@ -2,7 +2,7 @@
 <% @page_tagline = "Pray for people dealing with #{@category.name}" %>
 
 <% if can? :update, Category%>
-<%= link_to 'Edit This Category Name', edit_category_path(@category) %>
+<h2><%= link_to 'Edit This Category Name', edit_category_path(@category) %></h2><hr /><br />
 <% end %>
 
 <% @prayers.each do |prayer| %>
@@ -21,7 +21,8 @@
 
     </div>
 
-  
 <% end %>
+<br style="clear:both;" /><%= will_paginate @prayers %>
+  
 <br  style="clear:both;" />
 
