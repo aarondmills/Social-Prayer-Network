@@ -6,14 +6,15 @@
   <h2>Members of the Social Prayer Network</h2>
   <% @users.each do |user| %>
     <p><%= image_tag avatar_url(user) %>
-<%= user.firstname %></p>
+<%= link_to user.firstname, user_path(user) %></p>
 <% end %>
 <% elsif user_signed_in? %>
   <p>Hello, you are logged in as <%= current_user.email %></p>
 
 <% @users.each do |user| %>
     <p><%= image_tag avatar_url(user) %>
-<%= user.firstname %></p>
+
+<%= link_to user.firstname, user_path(user) %></p>
 <% end %>
 <% else %>
 <h2>This page is only available to members</h2>
