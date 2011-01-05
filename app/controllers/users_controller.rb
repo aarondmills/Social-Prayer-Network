@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+		@prayers = @user.prayers.paginate(:page => params[:page])
   end
 
   def edit

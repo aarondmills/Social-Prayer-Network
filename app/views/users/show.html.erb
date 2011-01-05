@@ -1,0 +1,28 @@
+<% @page_title = "#{@user.firstname}'s Prayer Requests" %>
+<% @page_tagline = "#{@user.firstname} has posted #{@user.prayers.count} requests, and has been a member for #{time_ago_in_words(@user.created_at)}" %>
+
+
+<% unless @user.prayers.empty? %>
+ 
+  <% @prayers.each do |prayer| %>
+
+	<div class="post">
+					  <div class="meta">
+					    <span class="category">Category: <a href="#"><%= prayer.category.name %></a></span>
+					    <span class="date">Posted <%= time_ago_in_words(prayer.created_at) %> ago, by <%= prayer.user.firstname %> <%= prayer.user.lastname %></span>
+					  </div>
+			<a href="#" class="img-load"><img src="<%= avatar_url(prayer.user) %>" class="lightview" width="80px" /></a>
+					  <%= prayer.request %>
+			<% if user_signed_in? %><% if current_user.id == prayer.user.id %><p style="float:right;"><br />
+			<%= link_to 'Edit This Request', edit_prayer_path(prayer), :class => 'button' %></p>
+	
+			<% end %><% end %> 
+
+			</div>
+
+
+	<% end %>
+	<br  style="clear:both;" />
+	<%= will_paginate @prayers %>
+<% end %>
+
