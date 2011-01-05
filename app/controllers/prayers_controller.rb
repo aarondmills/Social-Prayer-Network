@@ -12,17 +12,20 @@ class PrayersController < ApplicationController
 
   def show
     @prayer = Prayer.find(params[:id])
+		@categories = Category.all
 
   
   end
 
   def new
     @prayer = Prayer.new
+		@categories = Category.all
 
   end
 
   def edit
     @prayer = Prayer.find(params[:id])
+		@categories = Category.all
   end
 
 
