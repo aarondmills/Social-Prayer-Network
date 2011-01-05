@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
 		@categories = Category.all
     @category = Category.find(params[:id])
     
-		@prayers = Prayer.returncat(params[:id]).paginate :page => params[:page], :per_page => 2, :order => 'created_at DESC'
+		@prayers = Prayer.returncat(params[:id]).paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # show.html.erb
