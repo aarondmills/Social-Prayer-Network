@@ -1,5 +1,6 @@
 class PrayerMailer < ActionMailer::Base
   default :from => "aaron@jailbreakcreative.com"
+		
 	
 	def prayer_confirmation(prayer, category, user)
 	@category = category

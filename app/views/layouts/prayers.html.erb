@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><%= @page_title || 'Welcome' %> | Social Prayer Network</title>
+
+<!-- CSS -->
+<%= stylesheet_link_tag 'reset' %>
+<%= stylesheet_link_tag 'style' %>
+<%= stylesheet_link_tag 'orange' %>
+<%= stylesheet_link_tag 'superfish' %>
+<%= stylesheet_link_tag 'prettyPhoto' %>
+<%= stylesheet_link_tag 'jquery-ui-1.7.3.custom' %>
+<%= stylesheet_link_tag 'coin-slider-styles' %>
+
+<!--[if lt IE 8]>
+	<%= stylesheet_link_tag 'ie7' %>
+<![endif]-->
+
+<!-- Scripts -->
+
+<%= stylesheet_link_tag 'formtastic' %>
+<%= stylesheet_link_tag 'formtastic_changes' %>
+
+<%= javascript_include_tag "jquery-1.3.2.min", "jquery.cycle.all", "jquery.easing", "jqFancyTransitions", "coin-slider", "ui.core.min", "ui.tabs.min", "jquery.prettyPhoto", "superfish", "cufon-yui", "Delicious.font", "jquery.form", "bluz" %>
+
+<%= csrf_meta_tag %>
+</head>
+<body id="sub-page">
+<!-- site-wrapper START here -->
+<div id="site-wrapper">
+  <!-- header START here -->
+  <div id="header">
+    <!-- container START here -->
+    <div class="container">
+      <!-- top START here -->
+      <div id="top">
+        <!-- logo START here -->
+        <div id="logo">
+          <h1><%= link_to image_tag("https://s3.amazonaws.com/media.churchofgod.org/socialprayernetwork/logo.png", :border => 0), root_url %></h1>
+        </div>
+        <!-- logo END here -->
+        <!-- main-nav START here -->
+        <div id="main-nav">
+          <ul class="sf-menu">
+	    			<%= render 'layouts/menu' %>
+          </ul>
+        </div>
+        <!-- main-nav END here -->
+      </div>
+      <!-- top END here -->
+      <div id="pagename">
+        <h2><span><%= @page_title  %></span></h2>
+        <p class="tagline"><%= @page_tagline  %></p>
+      </div>
+    </div>
+    <!-- container END here -->
+  </div>
+  <!-- header END here -->
+  <!-- content START here -->
+  <div id="content">
+    <!-- container START here -->
+    <div class="container">
+      <!-- main-colum START here -->
+      <div id="main-colum" class="two_third">
+	
+	<% flash.each do |name, msg| %>
+	<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
+
+        <%= yield %>
+
+      </div>
+      <!-- main-colum END here -->
+      <!-- sidebar START here -->
+      <div id="sidebar" class="one_third no-margin">
+        <ul>
+          <!-- widget START here -->
+          <li class="widget">
+            <div class="inside">
+              <h3>Categories</h3>
+              <ul>
+								<% @categories.each do |category| %>
+                <li><%= link_to category.name, category %></li>
+								<% end %>
+              </ul>
+            </div>
+          </li>
+          <!-- widget END here -->
+          <!-- widget START here -->
+          <li class="widget">
+            <div class="inside">
+              <h3>Testimonial</h3>
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                <span class="author">-John Doe, <a href="#">Themeforest.net</a></span></blockquote>
+            </div>
+          </li>
+          <!-- widget END here -->
+          <!-- widget START here -->
+          <li class="widget">
+            <div class="inside">
+              <h3>Archives</h3>
+              <ul>
+                <li><a href="#">December 2009</a></li>
+                <li><a href="#">January 2010</a></li>
+                <li><a href="#">February 2010</a></li>
+              </ul>
+            </div>
+          </li>
+          <!-- widget END here -->
+        </ul>
+      </div>
+      <!-- sidebar END here -->
+    </div>
+    <!-- container END here -->
+  </div>
+  <!-- content END here -->
+</div>
+<!-- site-wrapper END here -->
+<!-- footer-wrapper START here -->
+<div id="footer-wrapper">
+  <!-- container START here -->
+  <div class="container">
+    <!-- footer-widget #1 START here -->
+    <div class="footer-widget one_forth">
+      <h3>Pages</h3>
+      <ul>
+				<%= render 'layouts/menu' %>
+      </ul>
+    </div>
+    <!-- footer-widget #1 END here -->
+    <!-- footer-widget #2 START here -->
+    <div class="footer-widget one_forth">
+      <h3>Archives</h3>
+      <ul>
+        <li><a href="#">Feb 2010</a></li>
+        <li><a href="#">Aprril 2010</a></li>
+        <li><a href="#">December 2009</a></li>
+        <li><a href="#">November 2009</a></li>
+      </ul>
+    </div>
+    <!-- footer-widget #2 END here -->
+    <!-- footer-widget #3 START here -->
+    <div class="footer-widget one_forth">
+      <h3>Categories</h3>
+      <ul>
+        <% @categories.each do |category| %>
+        <li><%= link_to category.name, category %></li>
+				<% end %>
+      </ul>
+    </div>
+    <!-- footer-widget #3 END here -->
+    <!-- footer-widget #4 START here -->
+    <div class="footer-widget one_forth no-margin">
+      <h3>All Rights Reserved</h3>
+      <p>&copy; 2010 All rights reserved to companyname.com. Get in touch with us with one of this social links.</p>
+      <ul class="social-links">
+        <li><a href="#"><%= image_tag('social/facebook_16.png') %></a></li>
+        <li><a href="#"><%= image_tag('social/twitter_16.png') %></a></li>
+        <li><a href="#"><%= image_tag('social/rss_16.png') %></a></li>
+      </ul>
+    </div>
+    <!-- footer-widget #4 END here -->
+  </div>
+  <!-- container END here -->
+</div>
+<!-- footer-wrapper END here -->
+<script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>

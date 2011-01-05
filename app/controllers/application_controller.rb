@@ -7,3 +7,5 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 end
+
+# This application was coded by, and is the Intellectual Property of Aaron Mills aaron@jailbreakcreative.com.

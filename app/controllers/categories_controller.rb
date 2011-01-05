@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.xml
+	layout "prayers"
   load_and_authorize_resource
 
   def index
@@ -15,6 +16,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.xml
   def show
+		@categories = Category.all
     @category = Category.find(params[:id])
     @prayers = Prayer.returncat(params[:id]).limit(20)
 

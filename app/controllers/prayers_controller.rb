@@ -1,9 +1,11 @@
 class PrayersController < ApplicationController
+	layout "prayers"
   load_and_authorize_resource
 
   def index
 
     @prayers = Prayer.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
+		@categories = Category.all
 
 
   end

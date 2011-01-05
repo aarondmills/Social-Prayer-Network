@@ -1,13 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= @category.name %> Requests</h1>
+<% @page_title = "#{@category.name} Requests" %>
+<% @page_tagline = "Pray for people dealing with #{@category.name}" %>
 
 <% if can? :update, Category%>
 <%= link_to 'Edit This Category Name', edit_category_path(@category) %>
 <% end %>
 
 <% @prayers.each do |prayer| %>
-<p><%= prayer.request %></p>
-<% end %>
 
+    <div class="post">
+          <div class="meta">
+            <span class="category">Category: <a href="#"><%= prayer.category.name %></a></span>
+            <span class="date">Posted <%= time_ago_in_words(prayer.created_at) %> ago, by <%= prayer.user.firstname %> <%= prayer.user.lastname %></span>
+          </div>
+	  <a href="#" class="img-load"><img src="<%= avatar_url(prayer.user) %>" class="lightview" width="80px" /></a>
+          <%= prayer.request %>
+    <% if user_signed_in? %><% if current_user.id == prayer.user.id %><p style="float:right;"><br />
+    <%= link_to 'Edit This Request', edit_prayer_path(prayer), :class => 'button' %></p>
+    
+    <% end %><% end %> 
+
+    </div>
+
+  
+<% end %>
+<br  style="clear:both;" />
 
