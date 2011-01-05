@@ -1,0 +1,13 @@
+<% if current_user %>
+<li class="widget">
+  <div class="inside">
+		<p style="float:right;padding:5px;"><img src="<%= avatar_url(current_user) %>" style="border:3px solid #ccc;" width="80px" /></p>
+    <h3><%= current_user.firstname %> <%= current_user.lastname %></h3>
+		<p>You have shared a total of <strong> <%= current_user.prayers.count %> </strong> requests, and have been a member for <%= time_ago_in_words(current_user.created_at) %>.</p><br />
+	
+    <blockquote>
+      
+      <span class="author">My Requests | <%= link_to "Logout", logout_path %></span></blockquote>
+  </div>
+</li>
+<% end %>

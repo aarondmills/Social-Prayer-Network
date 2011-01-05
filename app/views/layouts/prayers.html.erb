@@ -75,14 +75,15 @@
       <!-- sidebar START here -->
       <div id="sidebar" class="one_third no-margin">
         <ul>
-          <!-- widget START here -->
+					 <!-- USER PROFILE STARTS HERE -->
+					<%= render 'layouts/profile' %>
+         
+
           <li class="widget">
             <div class="inside">
               <h3>Categories</h3>
               <ul>
-								<% @categories.each do |category| %>
-                <li><%= link_to category.name, category %></li>
-								<% end %>
+								<%= render 'layouts/categories' %>
               </ul>
             </div>
           </li>
@@ -98,6 +99,7 @@
           </li>
           <!-- widget END here -->
           <!-- widget START here -->
+					
           <li class="widget">
             <div class="inside">
               <h3>Archives</h3>
@@ -145,9 +147,7 @@
     <div class="footer-widget one_forth">
       <h3>Categories</h3>
       <ul>
-        <% @categories.each do |category| %>
-        <li><%= link_to category.name, category %></li>
-				<% end %>
+        <%= render 'layouts/categories' %>
       </ul>
     </div>
     <!-- footer-widget #3 END here -->
