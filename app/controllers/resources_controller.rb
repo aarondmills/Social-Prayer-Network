@@ -1,9 +1,11 @@
 class ResourcesController < ApplicationController
+	layout "prayers"
   load_and_authorize_resource
 
   def index
     if params[:catid]
       @category = Category.find(params[:catid])
+			@categories = Category.all
       @resources = Resource.returncat(params[:catid]).paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
     else
       @resources = Resource.find(:all)
