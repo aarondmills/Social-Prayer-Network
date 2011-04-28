@@ -7,7 +7,8 @@
 	
     <blockquote>
       
-      <span class="author">My Requests | <%= link_to "Logout", logout_path %></span></blockquote>
+      <span class="author"><%= link_to "My Requests", user_path(current_user)
+%> | <%= link_to "Logout", logout_path %></span></blockquote>
   </div>
 </li>
 <% end %>
